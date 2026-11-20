@@ -21,6 +21,7 @@ import okhttp3.OkHttpClient
 import org.lsposed.hiddenapibypass.HiddenApiBypass
 import java.io.File
 import java.util.Locale
+import kotlinx.coroutines.launch
 
 lateinit var ksuApp: KernelSUApplication
 
@@ -70,6 +71,11 @@ class KernelSUApplication : Application(), ViewModelStoreOwner {
 
         val superUserViewModel = ViewModelProvider(this)[SuperUserViewModel::class.java]
         superUserViewModel.loadAppList()
+
+        // KPM 工具链/脚本/WebUI：缺失时自动补齐（不阻塞启动）
+        kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.Dispatchers.IO).launch {
+            runCatching { me.weishu.kernelsu.data.kpm.KpmBridge.bootstrap(this@KernelSUApplication) }
+        }
 
         val webroot = File(dataDir, "webroot")
         if (!webroot.exists()) {
