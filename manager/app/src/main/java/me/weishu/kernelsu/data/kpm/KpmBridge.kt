@@ -128,6 +128,7 @@ log "==== 自愈完成 ===="
     }
 
     private fun q(s: String) = "'" + s.replace("'", "'\\''") + "'"
+    private fun q(f: File) = q(f.absolutePath)
 
     private fun copyAsset(context: Context, asset: String, out: File) {
         out.parentFile?.mkdirs()
