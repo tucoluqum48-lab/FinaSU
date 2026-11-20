@@ -306,13 +306,11 @@ done
      */
     suspend fun ensureWebUiModule(): Boolean = withContext(Dispatchers.IO) {
         runCatching {
-            // FinaSU 的 SuFilePathHandler 黑名单禁止 /data/data：
-            //   · filesDir 的 canonical 路径就是 /data/data/...，必然被拒（会闪退）
-            //   · /data/adb/kpm-tool 是 0700，App 进程无法 stat，register 后取不到目录
-            // 所以界面放 app 外置私有目录（canonical 在 /storage/emulated/0 下，不在黑名单里，
-            // 且 App 自己有读写权），工具与脚本仍留在 /data/adb/kpm-tool。
-            val base = context.getExternalFilesDir(null) ?: context.filesDir
-            val root = File(base, WEBUI_DIR)
+            // 与 BakaSU 一致：界面放 app 私有目录。
+            // FinaSU 的 SuFilePathHandler 有 /data/data 黑名单，但我们走的是
+            // WebViewAssetLoader.InternalStoragePathHandler（内置界面专用分支），
+            // 它只要求目录在 app 私有存储内，不查黑名单。
+            val root = File(context.filesDir, WEBUI_DIR)
             val stage = File(context.cacheDir, "kpmwebui-assets")
             if (stage.exists()) stage.deleteRecursively()
             stage.mkdirs()
