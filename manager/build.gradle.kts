@@ -25,11 +25,11 @@ fun getGitDescribe(): String {
     return process.inputStream.bufferedReader().use { it.readText().trim() }
 }
 
+// 与官方 v1.6.4 对齐（自建版固定，方便与内核 33211 对应）
 fun getVersionCode(): Int {
-    val commitCount = getGitCommitCount()
-    return 30000 + commitCount
+    return 33211  // FIXED_MANAGER_VERSION
 }
 
 fun getVersionName(): String {
-    return getGitDescribe()
+    return "v1.6.4"  // FIXED_MANAGER_VERSION
 }
