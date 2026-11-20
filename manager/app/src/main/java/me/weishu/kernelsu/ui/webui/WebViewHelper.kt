@@ -65,24 +65,28 @@ internal suspend fun prepareWebView(
     webUIState: WebUIState,
 ) {
     withContext(Dispatchers.IO) {
+        // 内置界面（KPM）优先：命中时跳过模块查询，直接用 app 私有目录
+        val builtinRoot = BuiltinWebUI.rootFor(moduleId)
         val repo = ModuleRepositoryImpl()
-        val modules = repo.getModules().getOrDefault(emptyList())
+        val modules = if (builtinRoot == null) repo.getModules().getOrDefault(emptyList()) else emptyList()
         val moduleInfo = modules.find { info -> info.id == moduleId }
 
-        if (moduleInfo == null) {
+        if (builtinRoot == null && moduleInfo == null) {
             withContext(Dispatchers.Main) {
                 webUIState.uiEvent = WebUIEvent.Error(activity.getString(R.string.no_such_module, moduleId))
             }
             return@withContext
         }
 
-        if (!moduleInfo.hasWebUi || !moduleInfo.enabled || moduleInfo.update || moduleInfo.remove) {
+        if (builtinRoot == null && moduleInfo != null &&
+            (!moduleInfo.hasWebUi || !moduleInfo.enabled || moduleInfo.update || moduleInfo.remove)
+        ) {
             withContext(Dispatchers.Main) {
                 webUIState.uiEvent = WebUIEvent.Error(activity.getString(R.string.module_unavailable, moduleInfo.name))
             }
             return@withContext
         }
-        if (moduleInfo.zygiskRequired &&
+        if (builtinRoot == null && moduleInfo != null && moduleInfo.zygiskRequired &&
             SettingsRepositoryImpl().getFolkZygiskStatus().getOrNull()?.providesImplementation() == false
         ) {
             withContext(Dispatchers.Main) {
@@ -91,14 +95,15 @@ internal suspend fun prepareWebView(
             return@withContext
         }
 
-        webUIState.moduleName = moduleInfo.name
-        webUIState.modDir = "/data/adb/modules/${moduleId}"
+        val displayName = builtinRoot?.let { BuiltinWebUI.displayName } ?: moduleInfo!!.name
+        webUIState.moduleName = displayName
+        webUIState.modDir = builtinRoot?.absolutePath ?: "/data/adb/modules/${moduleId}"
 
         val shell = createRootShell(true)
         webUIState.rootShell = shell
 
         withContext(Dispatchers.Main) {
-            activity.setTaskDescription(activity.getString(R.string.app_name) + " - ${moduleInfo.name}")
+            activity.setTaskDescription(activity.getString(R.string.app_name) + " - $displayName")
 
             val webView = WebView(activity)
             webView.setBackgroundColor(Color.TRANSPARENT)
