@@ -23,10 +23,10 @@ object KpmBridge {
     const val MODULE_ID = "kpm_bridge"
     const val MODULE_DIR = "/data/adb/modules/$MODULE_ID"
 
-    /** 随 APK 打包的工具（assets/kpmbin/*） */
+    /** 随 APK 打包的工具（来自 assets/kpmbin 目录） */
     val BUNDLED_BINS = listOf("kpatch", "kpimg", "kptools", "magiskboot")
 
-    /** 随 APK 打包的脚本及其落点（assets/kpmscripts/*） */
+    /** 随 APK 打包的脚本及其落点（来自 assets/kpmscripts 目录） */
     val BUNDLED_SCRIPTS = listOf(
         "00-volkey-rescue.sh" to "/data/adb/post-fs-data.d/00-volkey-rescue.sh",
         "95-uid-refresh.sh" to "/data/adb/service.d/95-uid-refresh.sh",
