@@ -25,11 +25,11 @@ fun getGitDescribe(): String {
     return process.inputStream.bufferedReader().use { it.readText().trim() }
 }
 
-// 与官方 v1.6.4 对齐（自建版固定，方便与内核 33211 对应）
+// 与官方 v1.6.5 对齐（自建版固定版本号）
 fun getVersionCode(): Int {
-    return 33211  // FIXED_MANAGER_VERSION
+    return 33213  // FIXED_MANAGER_VERSION
 }
 
 fun getVersionName(): String {
-    return "v1.6.4"  // FIXED_MANAGER_VERSION
+    return "v1.6.5"  // FIXED_MANAGER_VERSION
 }
