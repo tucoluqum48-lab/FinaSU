@@ -306,35 +306,32 @@ done
      */
     suspend fun ensureWebUiModule(): Boolean = withContext(Dispatchers.IO) {
         runCatching {
-            // FinaSU 的 SuFilePathHandler 拒绝 /data/data 下的目录（黑名单），
-            // 所以内置界面不放 app 私有目录，统一放 /data/adb/kpm-tool/webroot：
-            //   · 不在黑名单里
-            //   · 通过 root shell 读取（SuFilePathHandler 本来就走 shell）
-            //   · 与工具/脚本同处一个目录，切回 BakaSU 也能复用
+            // FinaSU 的 SuFilePathHandler 黑名单禁止 /data/data：
+            //   · filesDir 的 canonical 路径就是 /data/data/...，必然被拒（会闪退）
+            //   · /data/adb/kpm-tool 是 0700，App 进程无法 stat，register 后取不到目录
+            // 所以界面放 app 外置私有目录（canonical 在 /storage/emulated/0 下，不在黑名单里，
+            // 且 App 自己有读写权），工具与脚本仍留在 /data/adb/kpm-tool。
+            val base = context.getExternalFilesDir(null) ?: context.filesDir
+            val root = File(base, WEBUI_DIR)
             val stage = File(context.cacheDir, "kpmwebui-assets")
             if (stage.exists()) stage.deleteRecursively()
             stage.mkdirs()
             copyAssetDir("kpmwebui", stage)
 
-            val webroot = File(TOOL_DIR, "webroot")
-            Shell.cmd("rm -rf " + quote(webroot.absolutePath) + " && mkdir -p " + quote(webroot.absolutePath)).exec()
-            val cmd = Shell.cmd(
-                "mkdir -p " + quote(webroot.absolutePath) +
-                    " && cp -af " + quote(stage.absolutePath) + "/. " + quote(webroot.absolutePath) + "/" +
-                    " && chmod -R 755 " + quote(webroot.absolutePath),
-            ).exec()
+            val webroot = File(root, "webroot")
+            if (webroot.exists()) webroot.deleteRecursively()
+            webroot.mkdirs()
+            stage.copyRecursively(webroot, overwrite = true)
             stage.deleteRecursively()
-            if (!cmd.isSuccess) return@runCatching false
 
-            // 登记给 WebViewHelper（其 webRoot 取 modDir/webroot）
-            me.weishu.kernelsu.ui.webui.BuiltinWebUI.register(File(TOOL_DIR), "KPM")
+            me.weishu.kernelsu.ui.webui.BuiltinWebUI.register(root, "KPM")
 
             // WebUI 里调用裸命令 kpatch，需要它在 root shell 的 PATH 中
             Shell.cmd(
                 "mkdir -p /data/adb/ksu/bin " + BIN_DIR +
                     " && ln -sf " + SELF_MANAGED_BIN + " /data/adb/ksu/bin/kpatch",
             ).exec()
-            Shell.cmd("test -s " + quote(webroot.absolutePath + "/index.html")).exec().isSuccess
+            File(webroot, "index.html").isFile
         }.getOrDefault(false)
     }
 
