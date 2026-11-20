@@ -104,7 +104,7 @@ internal suspend fun prepareWebView(
         webUIState.rootShell = shell
 
         withContext(Dispatchers.Main) {
-            activity.setTaskDescription(activity.getString(R.string.app_name) + " - $displayName")
+            activity.setTaskDescription(activity.getString(R.string.app_name) + " - " + displayName)
 
             val webView = WebView(activity)
             webView.setBackgroundColor(Color.TRANSPARENT)
@@ -119,17 +119,23 @@ internal suspend fun prepareWebView(
             }
 
             val webRoot = File("${webUIState.modDir}/webroot")
+            // 与 BakaSU 一致：内置界面用系统自带的 InternalStoragePathHandler，
+            // 它只要求目录在 app 私有存储内，不做 /data/data 黑名单校验；
+            // 模块界面仍走 SuFilePathHandler（需要 root shell 读 /data/adb）。
+            val pathHandler: WebViewAssetLoader.PathHandler = if (builtinRoot != null) {
+                WebViewAssetLoader.InternalStoragePathHandler(activity, webRoot)
+            } else {
+                SuFilePathHandler(
+                    activity,
+                    webRoot,
+                    shell,
+                    { webUIState.currentInsets },
+                    { enable -> webUIState.isInsetsEnabled = enable },
+                )
+            }
             val webViewAssetLoader = WebViewAssetLoader.Builder()
                 .setDomain(WEB_DOMAIN)
-                .addPathHandler(
-                    "/",
-                    SuFilePathHandler(
-                        activity,
-                        webRoot,
-                        shell,
-                        { webUIState.currentInsets },
-                        { enable -> webUIState.isInsetsEnabled = enable })
-                )
+                .addPathHandler("/", pathHandler)
                 .build()
 
             // WebViewClient
