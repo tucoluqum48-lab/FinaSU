@@ -694,21 +694,34 @@ fun FunctionCategoryContent(uiState: SettingsUiState, actions: SettingsScreenAct
                     val ctx = LocalContext.current
                     SegmentedListItem(
                         headlineContent = { Text("KPM 模块管理") },
-                        supportingContent = { Text("本地 KPM 界面（kpm_bridge 模块提供）") },
+                        supportingContent = { Text("本地 KPM 界面（内置，无需模块）") },
                         leadingContent = { Icon(Icons.Filled.Extension, null) },
                         onClick = {
-                            runCatching {
-                                ctx.startActivity(
-                                    Intent(ctx, WebUIActivity::class.java).setData(
-                                        Uri.Builder()
-                                            .scheme("kernelsu")
-                                            .authority("webui")
-                                            .appendQueryParameter("id", "kpm_bridge")
-                                            .build(),
-                                    ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                                )
-                            }.onFailure {
-                                Toast.makeText(ctx, "未找到 kpm_bridge 模块", Toast.LENGTH_SHORT).show()
+                            // 与 BakaSU 一致：先自愈（工具/脚本/内置 WebUI），再打开内置界面
+                            android.os.Handler(android.os.Looper.getMainLooper()).post {
+                                kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.Dispatchers.IO).launch {
+                                    val repo = me.weishu.kernelsu.data.kpm.KpmRepository(ctx.applicationContext)
+                                    runCatching { repo.bootstrap() }
+                                    runCatching { repo.ensureWebUiModule() }
+                                    kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) {
+                                        runCatching {
+                                            ctx.startActivity(
+                                                Intent(ctx, WebUIActivity::class.java).setData(
+                                                    Uri.Builder()
+                                                        .scheme("kernelsu")
+                                                        .authority("webui")
+                                                        .appendQueryParameter(
+                                                            "id",
+                                                            me.weishu.kernelsu.ui.webui.BuiltinWebUI.MODULE_ID,
+                                                        )
+                                                        .build(),
+                                                ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                                            )
+                                        }.onFailure {
+                                            Toast.makeText(ctx, "打开 KPM 界面失败", Toast.LENGTH_SHORT).show()
+                                        }
+                                    }
+                                }
                             }
                         },
                     )
