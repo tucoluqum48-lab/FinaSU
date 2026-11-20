@@ -88,7 +88,8 @@ log "==== 自愈完成 ===="
             // 1) 工具 → cache/bin
             val binStage = File(cache, "bin").apply { mkdirs() }
             BUNDLED_BINS.forEach { name ->
-                copyAsset(context, "kpmbin/$name", File(binStage, name))
+                // 某个二进制没随包打进来时跳过，不要整块失败
+                runCatching { copyAsset(context, "kpmbin/$name", File(binStage, name)) }
             }
             // 2) 脚本 → cache/scripts
             val scriptStage = File(cache, "scripts").apply { mkdirs() }
