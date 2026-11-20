@@ -74,7 +74,11 @@ class KernelSUApplication : Application(), ViewModelStoreOwner {
 
         // KPM 工具链/脚本/WebUI：缺失时自动补齐（不阻塞启动）
         kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.Dispatchers.IO).launch {
-            runCatching { me.weishu.kernelsu.data.kpm.KpmBridge.bootstrap(this@KernelSUApplication) }
+            runCatching {
+                val repo = me.weishu.kernelsu.data.kpm.KpmRepository(this@KernelSUApplication)
+                repo.bootstrap()
+                repo.ensureWebUiModule()
+            }
         }
 
         val webroot = File(dataDir, "webroot")
