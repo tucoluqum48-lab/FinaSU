@@ -1,5 +1,8 @@
 package me.weishu.kernelsu.ui.screen.settings
 
+import me.weishu.kernelsu.ui.webui.WebUIActivity
+import androidx.compose.material.icons.filled.Extension
+import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.compose.foundation.layout.padding
@@ -684,6 +687,30 @@ fun FunctionCategoryContent(uiState: SettingsUiState, actions: SettingsScreenAct
                         },
                         leadingContent = { Icon(Icons.Filled.LayersClear, null) },
                         onClick = actions.onOpenUmountPaths,
+                    )
+                },
+                {
+                    // KPM 管理：打开 kpm_bridge 模块里的本地 WebUI（/data/adb/modules/kpm_bridge/webroot）
+                    val ctx = LocalContext.current
+                    SegmentedListItem(
+                        headlineContent = { Text("KPM 模块管理") },
+                        supportingContent = { Text("本地 KPM 界面（kpm_bridge 模块提供）") },
+                        leadingContent = { Icon(Icons.Filled.Extension, null) },
+                        onClick = {
+                            runCatching {
+                                ctx.startActivity(
+                                    Intent(ctx, WebUIActivity::class.java).setData(
+                                        Uri.Builder()
+                                            .scheme("kernelsu")
+                                            .authority("webui")
+                                            .appendQueryParameter("id", "kpm_bridge")
+                                            .build(),
+                                    ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                                )
+                            }.onFailure {
+                                Toast.makeText(ctx, "未找到 kpm_bridge 模块", Toast.LENGTH_SHORT).show()
+                            }
+                        },
                     )
                 },
                 {
