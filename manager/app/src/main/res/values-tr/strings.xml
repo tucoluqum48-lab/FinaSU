@@ -5,7 +5,7 @@
     <string name="feature_status_forced_summary">Önyükleme yapılandırması tarafından zorlandı; buradan değiştirilemez</string>
     <string name="install_anykernel">AnyKernel3 ZIP flaşla</string>
     <string name="install_anykernel_summary">Güvenilir çekirdek yükleyicisini geçerli veya kullanılmayan A/B yuvasında çalıştırır. Root yetkisi gerekir.</string>
-    <string name="install_anykernel_warning">Bu ZIP root ile çalışır ve birden fazla bölümü değiştirebilir. Hangi bölümlerin ve yuvaların yazılacağını yükleyici belirler; FinaSU yuvayı geçersiz kılmaz veya ksud\'u yenilemez. Başarılı bir kurulum açılabilirliği garanti etmez ve başarısızlık kısmi değişiklikler bırakabilir. Mevcut boot imajı yedekleri bu değişiklikleri kapsamayabilir. Devam etmeden önce cihaz uyumluluğunu doğrulayın ve bir kurtarma imajı hazırlayın.</string>
+    <string name="install_anykernel_warning">Bu ZIP root ile çalışır ve birden fazla bölümü değiştirebilir. Hangi bölümlerin ve yuvaların yazılacağını yükleyici belirler; DeepseekSU yuvayı geçersiz kılmaz veya ksud\'u yenilemez. Başarılı bir kurulum açılabilirliği garanti etmez ve başarısızlık kısmi değişiklikler bırakabilir. Mevcut boot imajı yedekleri bu değişiklikleri kapsamayabilir. Devam etmeden önce cihaz uyumluluğunu doğrulayın ve bir kurtarma imajı hazırlayın.</string>
     <string name="install_anykernel_root_required">AnyKernel3 flaşlamak için root gerekir.</string>
     <string name="install_anykernel_read_failed">AnyKernel3 ZIP okunamadı.</string>
     <string name="home">Ana Sayfa</string>
@@ -13,7 +13,7 @@
     <string name="home_click_to_install">Yüklemek için dokunun</string>
     <string name="home_working">Çalışıyor</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">DeepseekSU</string>
     <string name="home_tile_system">Sistem bilgisi</string>
     <string name="home_tile_device">Cihaz</string>
     <string name="home_tile_storage">Depolama</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">KernelSU\'yu öğrenin</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">KernelSU\'nun nasıl kurulacağını ve modüllerin nasıl kullanılacağını öğrenin.</string>
-    <string name="home_learn_finasu">FinaSU hakkında bilgi edinin</string>
+    <string name="home_learn_finasu">DeepseekSU hakkında bilgi edinin</string>
     <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">FinaSU\'nun özelliklerini ve modüllerini keşfedin.</string>
+    <string name="home_click_to_learn_finasu">DeepseekSU\'nun özelliklerini ve modüllerini keşfedin.</string>
     <string name="home_support_title">Bizi Destekleyin</string>
     <string name="home_support_content">KernelSU ücretsiz ve açık kaynaklı bir yazılımdır ve her zaman öyle kalacaktır. Ancak bağış yaparak bize destek olduğunuzu gösterebilirsiniz.</string>
     <string name="home_gki_warning">v3.0.0 sürümünden itibaren GKI çalışma modu yalnızca test ortamlarında kullanılacaktır. Günlük kullanım için tavsiye etmiyoruz ve imaj dosyaları artık sunulmayacaktır.</string>
@@ -281,7 +281,7 @@
     <string name="settings_sucompat_summary">Uygulama Profilinde Süper Kullanıcı izni verilen uygulamaların /system/bin/su yürütülerek süper kullanıcı kabuğu almasına izin verir; yalnızca yeni işlemler için etkilidir.</string>
     <string name="settings_kernel_umount">Kernel bağlantısını kes</string>
     <string name="settings_kernel_umount_summary">KernelSU tarafından kontrol edilen çekirdek seviyesinde bağlantı kesme davranışı.</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">DeepseekSU Hide</string>
     <string name="settings_kernel_umount_unknown">Özelliğin kullanılabilirliği doğrulanamıyor</string>
     <string name="settings_kernel_umount_values">Şu anki: %1$s · Yeniden başlatma için kaydedildi: %2$s</string>
     <string name="settings_kernel_umount_on">Açık</string>
@@ -484,7 +484,7 @@
     <string name="settings_home_hide_status_tag_summary">Ana sayfa durum kartındaki çalışma modu etiketini gizler.</string>
     <string name="settings_support_links">Ana ekran alt kartı</string>
     <string name="settings_support_links_summary">Ana ekranın altında neyin görüneceğini seçin.</string>
-    <string name="settings_support_links_finasu">FinaSU hakkında bilgi edinin</string>
+    <string name="settings_support_links_finasu">DeepseekSU hakkında bilgi edinin</string>
     <string name="settings_support_links_legacy">Destek ve KernelSU</string>
     <string name="settings_support_links_hidden">Gizli</string>
     <string name="settings_theme_store_mode">Tema magazasi modu</string>
@@ -673,11 +673,11 @@
     <string name="download_install">Yükle</string>
     <string name="settings_finasu_hide_summary">Bootloader kilit açma durumunu kısmen gizler</string>
     <string name="settings_finasu_hide_reboot_hint">Yeniden başlatıldıktan sonra gerçek değer geri gelir</string>
-    <string name="settings_finasu_hide_failed">FinaSU Hide değiştirilemedi</string>
+    <string name="settings_finasu_hide_failed">DeepseekSU Hide değiştirilemedi</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">adbd daemonını Root ayrıcalıklarıyla çalıştır</string>
-    <string name="feature_external_changes_title">Paylaşılan ayarlar FinaSU dışında değiştirildi</string>
-    <string name="feature_external_changes_summary">FinaSU kayıtlı ayarlarını uyguladıktan sonra harici bir modül veya yönetici bu çalışma zamanı değerlerini değiştirdi. FinaSU otomatik olarak bunların üzerine yazmayacaktır.</string>
+    <string name="feature_external_changes_title">Paylaşılan ayarlar DeepseekSU dışında değiştirildi</string>
+    <string name="feature_external_changes_summary">DeepseekSU kayıtlı ayarlarını uyguladıktan sonra harici bir modül veya yönetici bu çalışma zamanı değerlerini değiştirdi. DeepseekSU otomatik olarak bunların üzerine yazmayacaktır.</string>
     <string name="feature_external_value_on">Açık</string>
     <string name="feature_external_value_off">Kapalı</string>
     <string name="menu_sort">Sırala</string>
@@ -873,7 +873,7 @@
     <string name="backup_section_content">Yedeklenecekler</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">Yerel klasör</string>
-    <string name="backup_local_summary">Download/FinaSU konumuna kaydedilir</string>
+    <string name="backup_local_summary">Download/DeepseekSU konumuna kaydedilir</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">Yedek klasörünü aç</string>
     <string name="backup_modules">Modüller</string>
@@ -1099,11 +1099,11 @@
     <string name="module_preinit_error">Ön başlatma eşitlemesi başarısız; önceki yapılandırma korundu</string>
     <string name="module_preinit_bootloop">Yinelenen açılış denemelerinden sonra ön başlatma duraklatıldı</string>
     <string name="module_preinit_unsupported">Ön başlatma bu çekirdekte veya yükleme modunda kullanılamıyor</string>
-    <string name="guide_welcome_title">FinaSU\'ya hoş geldiniz</string>
+    <string name="guide_welcome_title">DeepseekSU\'ya hoş geldiniz</string>
     <string name="guide_welcome_desc">Zygisk motoru, Shizuku API arka ucu, VFS yol yönlendirmesi ve modül bağlama motoru yerleşik olarak sunulan çekirdek düzeyinde root yönetimi.</string>
     <string name="guide_repo_title">GitHub\'da açık kaynak</string>
     <string name="guide_repo_desc">Kaynak kodu, sorun bildirimleri ve sürüm notlarının tümü depoda bulunur.</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/LyraVoid/DeepseekSU</string>
     <string name="guide_repo_action">Depoyu aç</string>
     <string name="guide_features_title">Yerleşik özellikler</string>
     <string name="guide_features_desc">Yöneticide dört motor çalışır; ek modül gerekmez.</string>
