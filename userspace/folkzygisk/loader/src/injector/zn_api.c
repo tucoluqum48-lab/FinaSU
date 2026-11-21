@@ -243,10 +243,20 @@ static uintptr_t spawner_image_base(void) {
   return base;
 }
 
+/* The spawner keeps its own name in comm; the app name lives in argv[0], and
+   modules scope themselves by that name. */
 static const char *hyos_process_name(void) {
-  static char name[64];
+  static char name[256];
 
-  if (prctl(PR_GET_NAME, name, 0, 0, 0) != 0) name[0] = '\0';
+  name[0] = '\0';
+  FILE *file = fopen("/proc/self/cmdline", "re");
+  if (file != NULL) {
+    size_t len = fread(name, 1, sizeof(name) - 1, file);
+    name[len] = '\0';
+    fclose(file);
+  }
+
+  if (name[0] == '\0' && prctl(PR_GET_NAME, name, 0, 0, 0) != 0) name[0] = '\0';
 
   return name;
 }
@@ -258,7 +268,6 @@ static void deliver_app_specialized(const char *package_name, const char *se_inf
   if (package_name == NULL || package_name[0] == '\0') return;
 
   g_hyos_delivered = true;
-  LOGI("ZN: app specialize %s in %d", package_name, (int)syscall(__NR_getpid));
 
   char process_name[256];
   char package_copy[256];
@@ -268,6 +277,8 @@ static void deliver_app_specialized(const char *package_name, const char *se_inf
   snprintf(package_copy, sizeof(package_copy), "%s", package_name ? package_name : "");
   snprintf(se_info_copy, sizeof(se_info_copy), "%s", se_info ? se_info : "");
   if (process_name[0] == '\0') snprintf(process_name, sizeof(process_name), "hyos_app");
+  LOGI("ZN: app specialize %s (%s) in %d", package_name, process_name,
+       (int)syscall(__NR_getpid));
 
   const struct ZnHyosAppSpecializeArgs args = {
     .process_name = process_name,
