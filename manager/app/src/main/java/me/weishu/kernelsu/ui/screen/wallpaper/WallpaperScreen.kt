@@ -309,7 +309,7 @@ fun WallpaperScreen() {
     }
     if (showExportDialog) {
         ThemeMetadataEditor(
-            initial = ThemeMetadata.current(context).let { if (it.name.isBlank()) it.copy(name = "FinaSU") else it },
+            initial = ThemeMetadata.current(context).let { if (it.name.isBlank()) it.copy(name = "DeepseekSU") else it },
             onDismiss = { showExportDialog = false },
             onExport = { metadata ->
                 showExportDialog = false
