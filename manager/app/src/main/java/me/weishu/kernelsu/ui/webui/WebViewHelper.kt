@@ -95,7 +95,8 @@ internal suspend fun prepareWebView(
             return@withContext
         }
 
-        val displayName = builtinRoot?.let { BuiltinWebUI.displayName } ?: moduleInfo!!.name
+        val displayName = builtinRoot?.let { BuiltinWebUI.nameFor(moduleId) ?: moduleInfo?.name ?: "内置界面" }
+            ?: moduleInfo!!.name
         webUIState.moduleName = displayName
         webUIState.modDir = builtinRoot?.absolutePath ?: "/data/adb/modules/${moduleId}"
         // 内置界面：webRoot 取 modDir/webroot（/data/adb/kpm-tool/webroot）
