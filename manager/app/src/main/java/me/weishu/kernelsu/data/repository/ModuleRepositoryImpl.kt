@@ -50,6 +50,9 @@ class ModuleRepositoryImpl : ModuleRepository {
                 }
                 // The Sui payload is a module on disk but is owned by the settings entry.
                 .filterNot { it.id == SuiStatus.MODULE_ID }
+                // 内置 Zygisk Next 需要一个 module.prop 载体（守护进程会读/回写它），
+                // 但它在界面上由「功能 → Zygisk Next 管理」负责，不在模块列表里重复展示。
+                .filterNot { it.id == "zygisksu" }
                 .toList()
         }
     }
