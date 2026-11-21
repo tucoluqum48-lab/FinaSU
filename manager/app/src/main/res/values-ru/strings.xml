@@ -5,7 +5,7 @@
     <string name="feature_status_forced_summary">Принудительно задано конфигурацией загрузки; изменить здесь нельзя</string>
     <string name="install_anykernel">Прошить ZIP AnyKernel3</string>
     <string name="install_anykernel_summary">Запускает доверенный установщик ядра в текущем или неиспользуемом слоте A/B. Требуются права Root.</string>
-    <string name="install_anykernel_warning">Этот ZIP запускается с правами root и может изменить несколько разделов. Установщик сам определяет, какие разделы и слоты будут записаны; FinaSU не переопределяет слот и не обновляет ksud. Успешная установка не гарантирует загрузку, а при сбое могут остаться частичные изменения. Существующие резервные копии boot-образа могут не покрывать эти изменения. Убедитесь в совместимости устройства и подготовьте образ для восстановления, прежде чем продолжать.</string>
+    <string name="install_anykernel_warning">Этот ZIP запускается с правами root и может изменить несколько разделов. Установщик сам определяет, какие разделы и слоты будут записаны; DeepseekSU не переопределяет слот и не обновляет ksud. Успешная установка не гарантирует загрузку, а при сбое могут остаться частичные изменения. Существующие резервные копии boot-образа могут не покрывать эти изменения. Убедитесь в совместимости устройства и подготовьте образ для восстановления, прежде чем продолжать.</string>
     <string name="install_anykernel_root_required">Для прошивки AnyKernel3 требуются права root.</string>
     <string name="install_anykernel_read_failed">Не удалось прочитать ZIP-файл AnyKernel3.</string>
     <string name="home">Главная</string>
@@ -13,7 +13,7 @@
     <string name="home_click_to_install">Нажмите, чтобы установить</string>
     <string name="home_working">Работает</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">DeepseekSU</string>
     <string name="home_tile_system">Системная информация</string>
     <string name="home_tile_device">Устройство</string>
     <string name="home_tile_storage">Хранилище</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">Узнайте о KernelSU</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/ru_RU/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">Узнайте, как установить KernelSU и использовать модули.</string>
-    <string name="home_learn_finasu">Узнайте о FinaSU</string>
+    <string name="home_learn_finasu">Узнайте о DeepseekSU</string>
     <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">Откройте для себя возможности и модули FinaSU.</string>
+    <string name="home_click_to_learn_finasu">Откройте для себя возможности и модули DeepseekSU.</string>
     <string name="home_support_title">Поддержите нас</string>
     <string name="home_support_content">KernelSU был и всегда будет бесплатным и открытым проектом. Однако Вы всегда можете поддержать нас, отправив небольшое пожертвование.</string>
     <string name="home_gki_warning">Начиная с версии 3.0.0, режим работы GKI будет использоваться только в тестовых средах. Мы не рекомендуем его для ежедневного использования, а image файлы больше предоставляться не будут.</string>
@@ -281,7 +281,7 @@
     <string name="settings_sucompat_summary">Разрешить root-доступ через /system/bin/su в новых процессах.</string>
     <string name="settings_kernel_umount">Размонтировать модули (на уровне ядра)</string>
     <string name="settings_kernel_umount_summary">Размонтировать модули в ядре для профиля приложения.</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">DeepseekSU Hide</string>
     <string name="settings_kernel_umount_unknown">Не удалось подтвердить доступность функции.</string>
     <string name="settings_kernel_umount_values">Текущее: %1$s · Сохранено для перезагрузки: %2$s</string>
     <string name="settings_kernel_umount_on">Включено</string>
@@ -484,7 +484,7 @@
     <string name="settings_home_hide_status_tag_summary">Скрыть метку режима работы на карточке состояния главного экрана.</string>
     <string name="settings_support_links">Нижняя карточка главной</string>
     <string name="settings_support_links_summary">Выберите, что показывать внизу главного экрана.</string>
-    <string name="settings_support_links_finasu">Узнайте о FinaSU</string>
+    <string name="settings_support_links_finasu">Узнайте о DeepseekSU</string>
     <string name="settings_support_links_legacy">Поддержка и KernelSU</string>
     <string name="settings_support_links_hidden">Скрыто</string>
     <string name="settings_theme_store_mode">Режим магазина тем</string>
@@ -673,11 +673,11 @@
     <string name="download_install">Установить</string>
     <string name="settings_finasu_hide_summary">Частично скрывает состояние разблокировки Bootloader</string>
     <string name="settings_finasu_hide_reboot_hint">После перезагрузки вернётся реальное значение</string>
-    <string name="settings_finasu_hide_failed">Не удалось изменить FinaSU Hide</string>
+    <string name="settings_finasu_hide_failed">Не удалось изменить DeepseekSU Hide</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">Запускать демон adbd с правами Root</string>
-    <string name="feature_external_changes_title">Общие настройки были изменены за пределами FinaSU.</string>
-    <string name="feature_external_changes_summary">Внешний модуль или менеджер изменил эти значения времени выполнения после того, как FinaSU применила сохраненные настройки. FinaSU не будет перезаписывать их автоматически.</string>
+    <string name="feature_external_changes_title">Общие настройки были изменены за пределами DeepseekSU.</string>
+    <string name="feature_external_changes_summary">Внешний модуль или менеджер изменил эти значения времени выполнения после того, как DeepseekSU применила сохраненные настройки. DeepseekSU не будет перезаписывать их автоматически.</string>
     <string name="feature_external_value_on">Включено</string>
     <string name="feature_external_value_off">Выключено</string>
     <string name="menu_sort">Сортировка</string>
@@ -873,7 +873,7 @@
     <string name="backup_section_content">Что копировать</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">Локальная папка</string>
-    <string name="backup_local_summary">Сохраняется в Download/FinaSU</string>
+    <string name="backup_local_summary">Сохраняется в Download/DeepseekSU</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">Открыть папку резервных копий</string>
     <string name="backup_modules">Модули</string>
@@ -1099,11 +1099,11 @@
     <string name="module_preinit_error">Не удалось синхронизировать предынициализацию; прежняя конфигурация сохранена</string>
     <string name="module_preinit_bootloop">Предынициализация приостановлена после нескольких попыток загрузки</string>
     <string name="module_preinit_unsupported">Предынициализация недоступна в этом ядре или режиме загрузки</string>
-    <string name="guide_welcome_title">Добро пожаловать в FinaSU</string>
+    <string name="guide_welcome_title">Добро пожаловать в DeepseekSU</string>
     <string name="guide_welcome_desc">Управление root на уровне ядра со встроенными движком Zygisk, бэкендом Shizuku API, перенаправлением путей VFS и движком монтирования модулей.</string>
     <string name="guide_repo_title">Открытый исходный код на GitHub</string>
     <string name="guide_repo_desc">Исходный код, сообщения о проблемах и примечания к выпускам находятся в репозитории.</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/LyraVoid/DeepseekSU</string>
     <string name="guide_repo_action">Открыть репозиторий</string>
     <string name="guide_features_title">Встроенные функции</string>
     <string name="guide_features_desc">В менеджере работают четыре движка; дополнительный модуль не требуется.</string>
