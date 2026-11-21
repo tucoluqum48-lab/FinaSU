@@ -6,26 +6,31 @@ import java.io.File
  * 管理器内置 WebUI（不依赖任何已安装模块）。
  *
  * FinaSU 原生的 WebViewHelper 只认 /data/adb/modules/<id>/webroot；
- * 这里登记一个 app 私有目录，prepareWebView 会优先用它代替模块目录。
+ * 这里登记 app 私有目录，prepareWebView 会优先用它代替模块目录。
+ * 支持多个内置界面（KPM / Zygisk Next）。
  */
 object BuiltinWebUI {
-    /** 伪模块 id，仅用于 Intent 传参 */
-    const val MODULE_ID = "kpm-builtin"
+    /** KPM 界面 id */
+    const val KPM_ID = "kpm-builtin"
 
-    @Volatile
-    private var rootDir: File? = null
+    /** Zygisk Next 界面 id */
+    const val ZNEXT_ID = "znext"
 
-    @Volatile
-    var displayName: String = "KPM 管理界面"
-        private set
+    private val roots = HashMap<String, File>()
+    private val names = HashMap<String, String>()
 
     /** 登记/更新内置界面根目录（其下需有 webroot/） */
-    fun register(root: File, name: String = "KPM 管理界面") {
-        rootDir = root
-        displayName = name
+    @Synchronized
+    fun register(id: String, root: File, name: String) {
+        roots[id] = root
+        names[id] = name
     }
 
     /** 若 id 命中内置界面，返回其根目录 */
-    fun rootFor(moduleId: String): File? =
-        if (moduleId == MODULE_ID) rootDir?.takeIf { it.isDirectory } else null
+    @Synchronized
+    fun rootFor(moduleId: String): File? = roots[moduleId]?.takeIf { it.isDirectory }
+
+    /** 内置界面的显示名 */
+    @Synchronized
+    fun nameFor(moduleId: String): String? = names[moduleId]
 }
