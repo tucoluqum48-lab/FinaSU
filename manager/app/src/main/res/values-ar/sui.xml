@@ -16,7 +16,7 @@
     <string name="sui_state_disabled">غير مفعّل</string>
     <string name="sui_state_enabled">يعمل</string>
     <string name="sui_state_pending">مفعّل، بانتظار إعادة التشغيل</string>
-    <string name="sui_state_external">مفعّل؛ يحقنه مزوّد Zygisk خارجي، لذا لا يمكن لـ FinaSU التحقق من حالة التشغيل</string>
+    <string name="sui_state_external">مفعّل؛ يحقنه مزوّد Zygisk خارجي، لذا لا يمكن لـ DeepseekSU التحقق من حالة التشغيل</string>
     <string name="sui_state_unavailable">غير متاح</string>
     <string name="sui_state_error">يحتاج إلى مراجعة</string>
     <string name="sui_reason_zygisk_disabled">فعّل Zygisk أولًا</string>
@@ -26,7 +26,7 @@
     <string name="sui_reason_conflict">يوجد تثبيت Sui آخر: %1$s</string>
     <string name="sui_reason_payload_missing">حِزمة Sui غير مكتملة؛ استخدم الإصلاح</string>
     <string name="sui_reason_module_disabled">وحدة Sui معطّلة على القرص</string>
-    <string name="sui_reason_enabled_externally">تم تفعيل Sui خارج FinaSU</string>
+    <string name="sui_reason_enabled_externally">تم تفعيل Sui خارج DeepseekSU</string>
     <string name="sui_reason_unknown">أبلغ Sui عن حالة غير متوقعة</string>
     <string name="sui_zygisk_external">مزوّد خارجي</string>
     <string name="sui_zygisk_disabled">معطّل</string>
@@ -53,7 +53,7 @@
     <string name="sui_default_mode_summary">يُستخدم للتطبيقات التي لا قاعدة خاصة بها</string>
     <string name="sui_hidden_count">تطبيقات مخفية عن Sui</string>
     <string name="sui_notifications_off">تنبيهات الخلفية معطّلة</string>
-    <string name="sui_notifications_off_summary">امنح إذن الإشعارات ليصلك الطلب وFinaSU في الخلفية</string>
+    <string name="sui_notifications_off_summary">امنح إذن الإشعارات ليصلك الطلب وDeepseekSU في الخلفية</string>
     <string name="sui_permissions_filter">تصفية</string>
     <string name="sui_mode_default">افتراضي</string>
     <string name="sui_mode_root">السماح بـ root</string>
