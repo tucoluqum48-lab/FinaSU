@@ -5,7 +5,7 @@
     <string name="feature_status_forced_summary">起動設定により強制されています。ここでは変更できません</string>
     <string name="install_anykernel">AnyKernel3 ZIP を書き込む</string>
     <string name="install_anykernel_summary">現在または未使用の A/B スロットで信頼済みカーネルインストーラーを実行します。Root 権限が必要です。</string>
-    <string name="install_anykernel_warning">この ZIP は root 権限で実行され、複数のパーティションを変更する可能性があります。書き込まれるパーティションとスロットはインストーラーが制御し、FinaSU はスロットの上書きや ksud の更新を行いません。インストールが成功しても起動できるとは限らず、失敗すると変更が中途半端に残る可能性があります。既存の boot イメージのバックアップではこれらの変更をカバーできない場合があります。続行する前にデバイスの互換性を確認し、リカバリーイメージを用意してください。</string>
+    <string name="install_anykernel_warning">この ZIP は root 権限で実行され、複数のパーティションを変更する可能性があります。書き込まれるパーティションとスロットはインストーラーが制御し、DeepseekSU はスロットの上書きや ksud の更新を行いません。インストールが成功しても起動できるとは限らず、失敗すると変更が中途半端に残る可能性があります。既存の boot イメージのバックアップではこれらの変更をカバーできない場合があります。続行する前にデバイスの互換性を確認し、リカバリーイメージを用意してください。</string>
     <string name="install_anykernel_root_required">AnyKernel3 を書き込むには root 権限が必要です。</string>
     <string name="install_anykernel_read_failed">AnyKernel3 ZIP を読み込めませんでした。</string>
     <string name="home">ホーム</string>
@@ -13,7 +13,7 @@
     <string name="home_click_to_install">タップしてインストール</string>
     <string name="home_working">動作中</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">DeepseekSU</string>
     <string name="home_tile_system">システム情報</string>
     <string name="home_tile_device">デバイス</string>
     <string name="home_tile_storage">ストレージ</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">KernelSU について</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/ja_JP/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">KernelSU のインストール方法やモジュールの使い方はこちら</string>
-    <string name="home_learn_finasu">FinaSU について</string>
+    <string name="home_learn_finasu">DeepseekSU について</string>
     <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">FinaSU の機能とモジュールをご覧ください。</string>
+    <string name="home_click_to_learn_finasu">DeepseekSU の機能とモジュールをご覧ください。</string>
     <string name="home_support_title">支援する</string>
     <string name="home_support_content">KernelSU はこれからもずっと無料でオープンソースです。寄付をして頂くことで、開発を支援していただけます。</string>
     <string name="home_gki_warning">バージョン 3.0.0 以降、GKI ワークモードはテスト環境でのみ使用されます。日常的な使用には推奨されません。また、イメージファイルの提供も停止されます。</string>
@@ -279,7 +279,7 @@
     <string name="settings_sucompat_summary">新規プロセスで /system/bin/su 経由での root アクセスを許可します。</string>
     <string name="settings_kernel_umount">モジュールのアンマウント (カーネルレベル)</string>
     <string name="settings_kernel_umount_summary">アプリプロファイルに基づいて、カーネルからモジュールをアンマウントします。</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">DeepseekSU Hide</string>
     <string name="settings_kernel_umount_unknown">機能の利用可能性を確認できません</string>
     <string name="settings_kernel_umount_values">現在: %1$s · 再起動用に保存されました: %2$s</string>
     <string name="settings_kernel_umount_on">オン</string>
@@ -482,7 +482,7 @@
     <string name="settings_home_hide_status_tag_summary">ホームのステータスカードにある実行モードのタグを隠します。</string>
     <string name="settings_support_links">ホーム下部のカード</string>
     <string name="settings_support_links_summary">ホーム画面の下部に表示する内容を選択します。</string>
-    <string name="settings_support_links_finasu">FinaSU について</string>
+    <string name="settings_support_links_finasu">DeepseekSU について</string>
     <string name="settings_support_links_legacy">支援と KernelSU</string>
     <string name="settings_support_links_hidden">非表示</string>
     <string name="settings_theme_store_mode">テーマストアのモード</string>
@@ -671,11 +671,11 @@
     <string name="download_install">インストール</string>
     <string name="settings_finasu_hide_summary">Bootloader のロック解除状態をある程度隠します</string>
     <string name="settings_finasu_hide_reboot_hint">再起動後に実際の値に戻ります</string>
-    <string name="settings_finasu_hide_failed">FinaSU Hide を変更できませんでした</string>
+    <string name="settings_finasu_hide_failed">DeepseekSU Hide を変更できませんでした</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">adbd デーモンを Root 権限で実行します</string>
-    <string name="feature_external_changes_title">FinaSU 外部で共有設定が変更されました</string>
-    <string name="feature_external_changes_summary">FinaSU が保存された設定を適用した後、外部モジュールまたはマネージャーがこれらのランタイム値を変更しました。 FinaSU はそれらを自動的に上書きしません。</string>
+    <string name="feature_external_changes_title">DeepseekSU 外部で共有設定が変更されました</string>
+    <string name="feature_external_changes_summary">DeepseekSU が保存された設定を適用した後、外部モジュールまたはマネージャーがこれらのランタイム値を変更しました。 DeepseekSU はそれらを自動的に上書きしません。</string>
     <string name="feature_external_value_on">オン</string>
     <string name="feature_external_value_off">オフ</string>
     <string name="menu_sort">並べ替え</string>
@@ -871,7 +871,7 @@
     <string name="backup_section_content">バックアップする内容</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">ローカルフォルダー</string>
-    <string name="backup_local_summary">Download/FinaSU に保存</string>
+    <string name="backup_local_summary">Download/DeepseekSU に保存</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">バックアップフォルダーを開く</string>
     <string name="backup_modules">モジュール</string>
@@ -1097,11 +1097,11 @@
     <string name="module_preinit_error">プリイニットの同期に失敗しました。前回の設定を保持します</string>
     <string name="module_preinit_bootloop">起動の再試行が続いたためプリイニットを一時停止しました</string>
     <string name="module_preinit_unsupported">このカーネルまたは読み込みモードではプリイニットを利用できません</string>
-    <string name="guide_welcome_title">FinaSU へようこそ</string>
+    <string name="guide_welcome_title">DeepseekSU へようこそ</string>
     <string name="guide_welcome_desc">カーネルレベルの root 管理。Zygisk エンジン、Shizuku API バックエンド、VFS パスリダイレクト、モジュールマウントエンジンを内蔵。</string>
     <string name="guide_repo_title">GitHub でオープンソース</string>
     <string name="guide_repo_desc">ソースコード、問題報告、リリースノートはすべてリポジトリにあります。</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/LyraVoid/DeepseekSU</string>
     <string name="guide_repo_action">リポジトリを開く</string>
     <string name="guide_features_title">内蔵機能</string>
     <string name="guide_features_desc">4つのエンジンをマネージャーに内蔵。追加モジュールは不要です。</string>
