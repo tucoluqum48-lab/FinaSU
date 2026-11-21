@@ -50,7 +50,7 @@ class ZnextRepository(private val context: Context) {
                     "rm -rf " + q(TOOL_DIR) + " && mkdir -p " + q(TOOL_DIR) +
                         " && cp -af " + q(stage.absolutePath) + "/. " + q(TOOL_DIR) + "/" +
                         " && rm -rf " + q("$TOOL_DIR/webroot") + " " + q("$TOOL_DIR/boot") +
-                        " " + q("$TOOL_DIR/module.prop.orig") + " " + q("$TOOL_DIR/cleanup.sh") +
+                        " " + q("$TOOL_DIR/cleanup.sh") +
                         " " + q("$TOOL_DIR/uninstall.sh") + " " + q("$TOOL_DIR/emulated-soft-reboot.sh") +
                         " " + q("$TOOL_DIR/post-fs-data.sh") + " " + q("$TOOL_DIR/service.sh") +
                         " " + q("$TOOL_DIR/machikado") + " " + q("$TOOL_DIR/mazoku") +
@@ -66,6 +66,16 @@ class ZnextRepository(private val context: Context) {
                     " && cp -f " + q("${stage.absolutePath}/boot/post-fs-data.sh") + " " + q(POST_FS_SCRIPT) +
                     " && cp -f " + q("${stage.absolutePath}/boot/service.sh") + " " + q(SERVICE_SCRIPT) +
                     " && chmod 755 " + q(POST_FS_SCRIPT) + " " + q(SERVICE_SCRIPT),
+            ).exec()
+
+            // 守护进程会读 / 回写 /data/adb/modules/zygisksu/module.prop，
+            // 因此必须保留一个最小"模块载体"（只有 module.prop），
+            // 界面上已由模块列表过滤掉，不显示为模块。
+            Shell.cmd(
+                "mkdir -p /data/adb/modules/zygisksu" +
+                    " && cp -f " + q("$TOOL_DIR/module.prop") + " /data/adb/modules/zygisksu/module.prop" +
+                    " && cp -f " + q("$TOOL_DIR/module.prop") + " " + q("$TOOL_DIR/module.prop.orig") +
+                    " && [ -f /data/adb/modules/zygisksu/disable ] && rm -f /data/adb/modules/zygisksu/disable",
             ).exec()
 
             // 当前这次也立刻应用策略（开机由脚本负责）
