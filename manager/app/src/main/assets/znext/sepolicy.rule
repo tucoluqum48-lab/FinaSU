@@ -1,0 +1,7 @@
+allow system_server system_server process execmem
+allow zygote zygote process execmem
+allow zygote zygote capability sys_chroot
+allow zygote nsfs file { open read }
+allow zygote unlabeled file { open read getattr }
+type unshare_lock_file file_type
+allow zygote unshare_lock_file file { read write lock }
