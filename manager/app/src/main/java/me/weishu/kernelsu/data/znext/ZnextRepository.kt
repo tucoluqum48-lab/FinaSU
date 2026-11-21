@@ -50,6 +50,10 @@ class ZnextRepository(private val context: Context) {
                     "rm -rf " + q(TOOL_DIR) + " && mkdir -p " + q(TOOL_DIR) +
                         " && cp -af " + q(stage.absolutePath) + "/. " + q(TOOL_DIR) + "/" +
                         " && rm -rf " + q("$TOOL_DIR/webroot") + " " + q("$TOOL_DIR/boot") +
+                        " " + q("$TOOL_DIR/module.prop.orig") + " " + q("$TOOL_DIR/cleanup.sh") +
+                        " " + q("$TOOL_DIR/uninstall.sh") + " " + q("$TOOL_DIR/emulated-soft-reboot.sh") +
+                        " " + q("$TOOL_DIR/post-fs-data.sh") + " " + q("$TOOL_DIR/service.sh") +
+                        " " + q("$TOOL_DIR/machikado") + " " + q("$TOOL_DIR/mazoku") +
                         " && chmod -R 755 " + q(TOOL_DIR) +
                         " && ln -sf zygiskd64 " + q("$TOOL_DIR/bin/zygiskd") +
                         " && mkdir -p " + q(STATE_DIR),
