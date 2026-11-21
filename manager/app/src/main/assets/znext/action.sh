@@ -48,10 +48,10 @@ SDK_FULL: $(getprop ro.build.version.sdk_full)
 Fingerprint: $(getprop ro.build.fingerprint)
 
 ======== zn status =======
-$(/data/adb/modules/zygisksu/bin/zygiskd status)
+$(/data/adb/znext/bin/zygiskd status)
 
 ======== zn module.prop ======
-$(cat /data/adb/modules/zygisksu/module.prop)
+$(cat /data/adb/znext/module.prop)
 EOF
 
 for src in /data/adb/zygisksu/bugreports /data/adb/zygisksu/bugreports.old /data/tombstones /data/system/dropbox /data/adb/ksu/log /data/adb/ap/log /sys/fs/pstore; do 
