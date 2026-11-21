@@ -5,6 +5,7 @@
 
 #include <linux/un.h>
 #include <sys/socket.h>
+#include <sys/time.h>
 
 #include "logging.h"
 #include "misc.h"
@@ -403,11 +404,21 @@ int rezygiskd_request_zn_companion(const char *path) {
   int fd = rezygiskd_connect(1);
   if (fd == -1) return -1;
 
+  /* The daemon may hand the socket to the companion without answering here;
+     a blocking read would then stall the caller, so keep it short. */
+  struct timeval timeout = { .tv_sec = 2, .tv_usec = 0 };
+  setsockopt(fd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
+
   safe_write(write_uint8_t(fd, (uint8_t)RequestZnCompanionSocket), "RequestZnCompanionSocket action", return -1);
   safe_write(write_string(fd, path), "zn library path", return -1);
 
   uint8_t res = 0;
-  safe_read(read_uint8_t(fd, &res), "zn companion result", return -1);
+  if (read_uint8_t(fd, &res) != sizeof(res)) {
+    LOGE("ZN companion request timed out for %s", path);
+
+    close(fd);
+    return -1;
+  }
 
   if (res == 1) return fd;
 
