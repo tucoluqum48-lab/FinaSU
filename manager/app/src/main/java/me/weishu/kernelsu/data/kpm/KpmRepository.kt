@@ -324,7 +324,9 @@ done
             stage.copyRecursively(webroot, overwrite = true)
             stage.deleteRecursively()
 
-            me.weishu.kernelsu.ui.webui.BuiltinWebUI.register(root, "KPM")
+            me.weishu.kernelsu.ui.webui.BuiltinWebUI.register(
+                me.weishu.kernelsu.ui.webui.BuiltinWebUI.KPM_ID, root, "KPM",
+            )
 
             // WebUI 里调用裸命令 kpatch，需要它在 root shell 的 PATH 中
             Shell.cmd(
