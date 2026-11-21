@@ -731,45 +731,6 @@ fun FunctionCategoryContent(uiState: SettingsUiState, actions: SettingsScreenAct
                     )
                 },
                 {
-                    // Zygisk Next 管理：内置部署（不进模块列表），打开其本地 WebUI
-                    val ctx = LocalContext.current
-                    SegmentedListItem(
-                        headlineContent = { Text("Zygisk Next 管理") },
-                        supportingContent = { Text("内置部署（不占模块位）+ 本地界面") },
-                        leadingContent = { Icon(Icons.Filled.Extension, null) },
-                        onClick = {
-                            val appCtx = ctx.applicationContext
-                            Thread {
-                                runCatching {
-                                    kotlinx.coroutines.runBlocking {
-                                        val repo = me.weishu.kernelsu.data.znext.ZnextRepository(appCtx)
-                                        repo.ensureInstalled()
-                                        repo.ensureWebUi()
-                                    }
-                                }
-                                android.os.Handler(android.os.Looper.getMainLooper()).post {
-                                    runCatching {
-                                        ctx.startActivity(
-                                            Intent(ctx, WebUIActivity::class.java).setData(
-                                                Uri.Builder()
-                                                    .scheme("kernelsu")
-                                                    .authority("webui")
-                                                    .appendQueryParameter(
-                                                        "id",
-                                                        me.weishu.kernelsu.ui.webui.BuiltinWebUI.ZNEXT_ID,
-                                                    )
-                                                    .build(),
-                                            ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                                        )
-                                    }.onFailure {
-                                        Toast.makeText(ctx, "打开 Zygisk Next 界面失败", Toast.LENGTH_SHORT).show()
-                                    }
-                                }
-                            }.start()
-                        },
-                    )
-                },
-                {
                     SegmentedSwitchItem(
                         icon = Icons.Filled.PhonelinkLock,
                         title = stringResource(id = R.string.settings_finasu_hide),
