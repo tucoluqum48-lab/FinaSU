@@ -5,7 +5,7 @@
     <string name="feature_status_forced_summary">مفروض بواسطة إعدادات الإقلاع؛ لا يمكن تغييره من هنا</string>
     <string name="install_anykernel">تثبيت ملف AnyKernel3 ZIP</string>
     <string name="install_anykernel_summary">شغّل مثبّت نواة موثوقًا على الفتحة الحالية أو فتحة A/B غير المستخدمة. يتطلب صلاحية Root.</string>
-    <string name="install_anykernel_warning">يعمل ملف ZIP هذا بصلاحية الجذر وقد يعدّل عدة أقسام. يتحكم المُثبِّت في الأقسام والفتحات التي تُكتب؛ ولا يقوم FinaSU بتجاوز الفتحة أو تحديث ksud. لا يضمن نجاح التثبيت قابلية الإقلاع، وقد يترك الفشل تغييرات جزئية. قد لا تغطي النسخ الاحتياطية الحالية لصورة الإقلاع هذه التغييرات. تأكد من توافق الجهاز وجهّز صورة استرداد قبل المتابعة.</string>
+    <string name="install_anykernel_warning">يعمل ملف ZIP هذا بصلاحية الجذر وقد يعدّل عدة أقسام. يتحكم المُثبِّت في الأقسام والفتحات التي تُكتب؛ ولا يقوم DeepseekSU بتجاوز الفتحة أو تحديث ksud. لا يضمن نجاح التثبيت قابلية الإقلاع، وقد يترك الفشل تغييرات جزئية. قد لا تغطي النسخ الاحتياطية الحالية لصورة الإقلاع هذه التغييرات. تأكد من توافق الجهاز وجهّز صورة استرداد قبل المتابعة.</string>
     <string name="install_anykernel_root_required">صلاحية الجذر مطلوبة لتثبيت AnyKernel3.</string>
     <string name="install_anykernel_read_failed">تعذّر قراءة ملف AnyKernel3 ZIP.</string>
     <string name="home">الرئيسية</string>
@@ -13,7 +13,7 @@
     <string name="home_click_to_install">إضغط للتثبيت</string>
     <string name="home_working">يعمل</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">DeepseekSU</string>
     <string name="home_tile_system">معلومات النظام</string>
     <string name="home_tile_device">الجهاز</string>
     <string name="home_tile_storage">التخزين</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">تعلم KernelSU</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">تعرف على كيفية تثبيت KernelSU واستخدام الإضافات</string>
-    <string name="home_learn_finasu">تعرّف على FinaSU</string>
+    <string name="home_learn_finasu">تعرّف على DeepseekSU</string>
     <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">اكتشف ميزات FinaSU ووحداته.</string>
+    <string name="home_click_to_learn_finasu">اكتشف ميزات DeepseekSU ووحداته.</string>
     <string name="home_support_title">إدعمنا</string>
     <string name="home_support_content">KernelSU سيظل دائماً مجانياً ومفتوح المصدر. مع ذلك، يمكنك متى ما استطعت أن تظهر لنا أنك تهتم بالتبرع.</string>
     <string name="home_gki_warning">بدءًا من الإصدار 3.0.0، سيُستخدم وضع عمل GKI في بيئات الاختبار فقط. لا نوصي باستخدامه يوميًا، ولن تُوفَّر ملفات الصور بعد الآن.</string>
@@ -281,7 +281,7 @@
     <string name="settings_sucompat_summary">يسمح للتطبيقات التي تم منحها صلاحيات Superuser في ملف تعريف التطبيق بالحصول على shell superuser من خلال تنفيذ /system/bin/su؛ فعال فقط للعمليات الجديدة.</string>
     <string name="settings_kernel_umount">إلغاء تحميل النواة</string>
     <string name="settings_kernel_umount_summary">سلوك إلغاء تحميل مستوى النواة الذي يسيطر عليه KernelSU</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">DeepseekSU Hide</string>
     <string name="settings_kernel_umount_unknown">غير قادر على تأكيد توفر الميزة</string>
     <string name="settings_kernel_umount_values">الحالي: %1$s · تم الحفظ لإعادة التشغيل: %2$s</string>
     <string name="settings_kernel_umount_on">مفعّل</string>
@@ -484,7 +484,7 @@
     <string name="settings_home_hide_status_tag_summary">إخفاء وسم وضع التشغيل على بطاقة حالة الصفحة الرئيسية.</string>
     <string name="settings_support_links">بطاقة أسفل الرئيسية</string>
     <string name="settings_support_links_summary">اختر ما يظهر أسفل الشاشة الرئيسية.</string>
-    <string name="settings_support_links_finasu">تعرّف على FinaSU</string>
+    <string name="settings_support_links_finasu">تعرّف على DeepseekSU</string>
     <string name="settings_support_links_legacy">الدعم وKernelSU</string>
     <string name="settings_support_links_hidden">مخفي</string>
     <string name="settings_theme_store_mode">وضع متجر السمات</string>
@@ -673,11 +673,11 @@
     <string name="download_install">تثبيت</string>
     <string name="settings_finasu_hide_summary">إخفاء حالة فتح Bootloader جزئيًا</string>
     <string name="settings_finasu_hide_reboot_hint">تعود القيمة الحقيقية بعد إعادة التشغيل</string>
-    <string name="settings_finasu_hide_failed">تعذّر تغيير FinaSU Hide</string>
+    <string name="settings_finasu_hide_failed">تعذّر تغيير DeepseekSU Hide</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">تشغيل خدمة adbd بصلاحيات الجذر</string>
-    <string name="feature_external_changes_title">تم تغيير الإعدادات المشتركة خارج FinaSU</string>
-    <string name="feature_external_changes_summary">قامت وحدة خارجية أو مدير بتغيير قيم وقت التشغيل هذه بعد أن طبق FinaSU إعداداته المحفوظة. لن يقوم FinaSU بالكتابة فوقها تلقائيًا.</string>
+    <string name="feature_external_changes_title">تم تغيير الإعدادات المشتركة خارج DeepseekSU</string>
+    <string name="feature_external_changes_summary">قامت وحدة خارجية أو مدير بتغيير قيم وقت التشغيل هذه بعد أن طبق DeepseekSU إعداداته المحفوظة. لن يقوم DeepseekSU بالكتابة فوقها تلقائيًا.</string>
     <string name="feature_external_value_on">مفعّل</string>
     <string name="feature_external_value_off">معطّل</string>
     <string name="menu_sort">فرز</string>
@@ -873,7 +873,7 @@
     <string name="backup_section_content">ما الذي يتم نسخه احتياطيًا</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">مجلد محلي</string>
-    <string name="backup_local_summary">يُحفظ في Download/FinaSU</string>
+    <string name="backup_local_summary">يُحفظ في Download/DeepseekSU</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">فتح مجلد النسخ الاحتياطي</string>
     <string name="backup_modules">الوحدات</string>
@@ -1099,11 +1099,11 @@
     <string name="module_preinit_error">فشلت مزامنة التهيئة المسبقة؛ تم الاحتفاظ بالإعداد السابق</string>
     <string name="module_preinit_bootloop">تم إيقاف التهيئة المسبقة مؤقتًا بعد محاولات إقلاع متكررة</string>
     <string name="module_preinit_unsupported">التهيئة المسبقة غير متاحة في هذا النواة أو وضع التحميل</string>
-    <string name="guide_welcome_title">مرحبًا بك في FinaSU</string>
+    <string name="guide_welcome_title">مرحبًا بك في DeepseekSU</string>
     <string name="guide_welcome_desc">إدارة Root على مستوى النواة مع محرك Zygisk وخلفية Shizuku API وإعادة توجيه مسارات VFS ومحرك تركيب الوحدات، كلها مدمجة.</string>
     <string name="guide_repo_title">مفتوح المصدر على GitHub</string>
     <string name="guide_repo_desc">الشيفرة المصدرية وتقارير المشكلات وملاحظات الإصدارات موجودة جميعها في المستودع.</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/LyraVoid/DeepseekSU</string>
     <string name="guide_repo_action">فتح المستودع</string>
     <string name="guide_features_title">ميزات مدمجة</string>
     <string name="guide_features_desc">تعمل أربعة محركات داخل المدير، دون الحاجة إلى وحدة إضافية.</string>
