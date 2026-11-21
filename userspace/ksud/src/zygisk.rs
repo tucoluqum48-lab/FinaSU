@@ -245,7 +245,7 @@ type zygisk_file file_type
 typeattribute zygisk_file mlstrustedobject
 allow zygote zygisk_file sock_file { read write }
 allow domain zygisk_file sock_file { read write getattr }
-allow domain zygisk_file unix_stream_socket connectto
+allow domain zygisk_file unix_stream_socket { read write connectto getattr }
 allow zygote adb_data_file dir search
 allow zygote adb_data_file file { read open getattr map }
 allow zygote ksu dir search
@@ -277,7 +277,7 @@ allow domain system_file file { read open getattr map execute }
 allow domain system_lib_file dir search
 allow domain system_lib_file file { read open getattr map execute }
 allow domain zygisk_file sock_file { read write }
-allow domain zygisk_file unix_stream_socket connectto
+allow domain zygisk_file unix_stream_socket { read write connectto getattr }
 allow domain zygote unix_stream_socket connectto
 ";
 
