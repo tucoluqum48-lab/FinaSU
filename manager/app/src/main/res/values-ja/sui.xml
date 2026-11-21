@@ -16,7 +16,7 @@
     <string name="sui_state_disabled">未有効</string>
     <string name="sui_state_enabled">実行中</string>
     <string name="sui_state_pending">有効、再起動待ち</string>
-    <string name="sui_state_external">有効。第三者 Zygisk プロバイダーが注入しているため、FinaSU は実行状態を確認できません</string>
+    <string name="sui_state_external">有効。第三者 Zygisk プロバイダーが注入しているため、DeepseekSU は実行状態を確認できません</string>
     <string name="sui_state_unavailable">利用不可</string>
     <string name="sui_state_error">要確認</string>
     <string name="sui_reason_zygisk_disabled">先に Zygisk を有効にしてください</string>
@@ -26,7 +26,7 @@
     <string name="sui_reason_conflict">別の Sui が導入されています: %1$s</string>
     <string name="sui_reason_payload_missing">Sui ペイロードが不完全です。修復してください</string>
     <string name="sui_reason_module_disabled">Sui モジュールはディスク上で無効です</string>
-    <string name="sui_reason_enabled_externally">Sui は FinaSU の外部で有効化されました</string>
+    <string name="sui_reason_enabled_externally">Sui は DeepseekSU の外部で有効化されました</string>
     <string name="sui_reason_unknown">Sui が想定外の状態を報告しました</string>
     <string name="sui_zygisk_external">第三者プロバイダー</string>
     <string name="sui_zygisk_disabled">無効</string>
@@ -53,7 +53,7 @@
     <string name="sui_default_mode_summary">個別のルールがないアプリに適用されます</string>
     <string name="sui_hidden_count">Sui から隠すアプリ</string>
     <string name="sui_notifications_off">バックグラウンド通知が無効</string>
-    <string name="sui_notifications_off_summary">通知を許可すると、FinaSU がバックグラウンドでも要求を受け取れます</string>
+    <string name="sui_notifications_off_summary">通知を許可すると、DeepseekSU がバックグラウンドでも要求を受け取れます</string>
     <string name="sui_permissions_filter">絞り込み</string>
     <string name="sui_mode_default">既定</string>
     <string name="sui_mode_root">root を許可</string>
