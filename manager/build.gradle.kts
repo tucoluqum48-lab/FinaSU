@@ -25,11 +25,11 @@ fun getGitDescribe(): String {
     return process.inputStream.bufferedReader().use { it.readText().trim() }
 }
 
+// 与官方 v1.6.5 对齐（自建版固定版本号）
 fun getVersionCode(): Int {
-    val commitCount = getGitCommitCount()
-    return 30000 + commitCount
+    return 33232  // FIXED_MANAGER_VERSION
 }
 
 fun getVersionName(): String {
-    return getGitDescribe()
+    return "v1.7.0-beta9"  // FIXED_MANAGER_VERSION
 }

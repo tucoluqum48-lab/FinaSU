@@ -16,7 +16,7 @@
     <string name="sui_state_disabled">비활성화됨</string>
     <string name="sui_state_enabled">실행 중</string>
     <string name="sui_state_pending">활성화됨, 재부팅 대기 중</string>
-    <string name="sui_state_external">활성화됨. 타사 Zygisk 제공자가 주입하므로 FinaSU가 실행 상태를 확인할 수 없습니다</string>
+    <string name="sui_state_external">활성화됨. 타사 Zygisk 제공자가 주입하므로 DeepseekSU가 실행 상태를 확인할 수 없습니다</string>
     <string name="sui_state_unavailable">사용할 수 없음</string>
     <string name="sui_state_error">확인 필요</string>
     <string name="sui_reason_zygisk_disabled">먼저 Zygisk를 활성화하세요</string>
@@ -26,7 +26,7 @@
     <string name="sui_reason_conflict">다른 Sui 설치가 있습니다: %1$s</string>
     <string name="sui_reason_payload_missing">Sui 페이로드가 불완전합니다. 복구를 사용하세요</string>
     <string name="sui_reason_module_disabled">Sui 모듈이 디스크에서 비활성화되어 있습니다</string>
-    <string name="sui_reason_enabled_externally">Sui가 FinaSU 밖에서 활성화되었습니다</string>
+    <string name="sui_reason_enabled_externally">Sui가 DeepseekSU 밖에서 활성화되었습니다</string>
     <string name="sui_reason_unknown">Sui가 예상치 못한 상태를 보고했습니다</string>
     <string name="sui_zygisk_external">타사 제공자</string>
     <string name="sui_zygisk_disabled">비활성화됨</string>
@@ -53,7 +53,7 @@
     <string name="sui_default_mode_summary">자체 규칙이 없는 앱에 적용됩니다</string>
     <string name="sui_hidden_count">Sui에서 숨긴 앱</string>
     <string name="sui_notifications_off">백그라운드 알림이 꺼져 있음</string>
-    <string name="sui_notifications_off_summary">알림을 허용하면 FinaSU가 백그라운드일 때도 요청을 받을 수 있습니다</string>
+    <string name="sui_notifications_off_summary">알림을 허용하면 DeepseekSU가 백그라운드일 때도 요청을 받을 수 있습니다</string>
     <string name="sui_permissions_filter">필터</string>
     <string name="sui_mode_default">기본</string>
     <string name="sui_mode_root">root 허용</string>

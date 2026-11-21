@@ -16,7 +16,7 @@
     <string name="sui_state_disabled">Chưa bật</string>
     <string name="sui_state_enabled">Đang chạy</string>
     <string name="sui_state_pending">Đã bật, chờ khởi động lại</string>
-    <string name="sui_state_external">Đã bật; do nhà cung cấp Zygisk bên thứ ba chèn vào nên FinaSU không thể xác minh trạng thái</string>
+    <string name="sui_state_external">Đã bật; do nhà cung cấp Zygisk bên thứ ba chèn vào nên DeepseekSU không thể xác minh trạng thái</string>
     <string name="sui_state_unavailable">Không khả dụng</string>
     <string name="sui_state_error">Cần chú ý</string>
     <string name="sui_reason_zygisk_disabled">Hãy bật Zygisk trước</string>
@@ -26,7 +26,7 @@
     <string name="sui_reason_conflict">Đã có bản cài Sui khác: %1$s</string>
     <string name="sui_reason_payload_missing">Payload của Sui chưa đầy đủ; hãy dùng chức năng sửa chữa</string>
     <string name="sui_reason_module_disabled">Mô-đun Sui bị tắt trên đĩa</string>
-    <string name="sui_reason_enabled_externally">Sui được bật ngoài FinaSU</string>
+    <string name="sui_reason_enabled_externally">Sui được bật ngoài DeepseekSU</string>
     <string name="sui_reason_unknown">Sui báo trạng thái bất thường</string>
     <string name="sui_zygisk_external">nhà cung cấp bên thứ ba</string>
     <string name="sui_zygisk_disabled">đã tắt</string>
@@ -53,7 +53,7 @@
     <string name="sui_default_mode_summary">Dùng cho ứng dụng không có quy tắc riêng</string>
     <string name="sui_hidden_count">Ứng dụng bị ẩn khỏi Sui</string>
     <string name="sui_notifications_off">Thông báo nền đang tắt</string>
-    <string name="sui_notifications_off_summary">Cấp quyền thông báo để nhận yêu cầu khi FinaSU ở nền</string>
+    <string name="sui_notifications_off_summary">Cấp quyền thông báo để nhận yêu cầu khi DeepseekSU ở nền</string>
     <string name="sui_permissions_filter">Lọc</string>
     <string name="sui_mode_default">Mặc định</string>
     <string name="sui_mode_root">Cho phép root</string>

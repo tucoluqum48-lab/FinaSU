@@ -16,7 +16,7 @@
     <string name="sui_state_disabled">Not enabled</string>
     <string name="sui_state_enabled">Running</string>
     <string name="sui_state_pending">Enabled, waiting for a reboot</string>
-    <string name="sui_state_external">Enabled; a third-party Zygisk provider injects it, so FinaSU cannot verify the running state</string>
+    <string name="sui_state_external">Enabled; a third-party Zygisk provider injects it, so DeepseekSU cannot verify the running state</string>
     <string name="sui_state_unavailable">Unavailable</string>
     <string name="sui_state_error">Needs attention</string>
     <string name="sui_reason_zygisk_disabled">Enable Zygisk first</string>
@@ -26,7 +26,7 @@
     <string name="sui_reason_conflict">Another Sui installation exists: %1$s</string>
     <string name="sui_reason_payload_missing">The Sui payload is incomplete; use repair</string>
     <string name="sui_reason_module_disabled">The Sui module is disabled on disk</string>
-    <string name="sui_reason_enabled_externally">Sui was enabled outside FinaSU</string>
+    <string name="sui_reason_enabled_externally">Sui was enabled outside DeepseekSU</string>
     <string name="sui_reason_unknown">Sui reported an unexpected state</string>
     <string name="sui_zygisk_external">third-party provider</string>
     <string name="sui_zygisk_disabled">disabled</string>
@@ -53,7 +53,7 @@
     <string name="sui_default_mode_summary">Used for apps without a rule of their own</string>
     <string name="sui_hidden_count">Apps hidden from Sui</string>
     <string name="sui_notifications_off">Background prompts are off</string>
-    <string name="sui_notifications_off_summary">Grant notification access so a request can reach you while FinaSU is in the background</string>
+    <string name="sui_notifications_off_summary">Grant notification access so a request can reach you while DeepseekSU is in the background</string>
     <string name="sui_permissions_filter">Filter</string>
     <string name="sui_mode_default">Default</string>
     <string name="sui_mode_root">Allow root</string>

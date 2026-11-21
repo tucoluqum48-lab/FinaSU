@@ -5,7 +5,7 @@
     <string name="feature_status_forced_summary">天意已由圣启配置钦定，不可于此处更改</string>
     <string name="install_anykernel">铭刻 AnyKernel3 圣匣</string>
     <string name="install_anykernel_summary">以当前星辰槽或未使用的 A/B 星辰槽运转可信灵魂安装器，需 root 之权。</string>
-    <string name="install_anykernel_warning">此圣匣将以 root 施展，或改动多方圣域分区。实际铭刻之分区与星辰槽由安装符咒决定，FinaSU 不抢占星辰槽，亦不更新 ksud。铭刻功成未必可启，败陨亦可能留下残迹。现有圣启镜像拓印未必涵盖此番改动。请先确认圣器相容，备好归元镜像，再续行。</string>
+    <string name="install_anykernel_warning">此圣匣将以 root 施展，或改动多方圣域分区。实际铭刻之分区与星辰槽由安装符咒决定，DeepseekSU 不抢占星辰槽，亦不更新 ksud。铭刻功成未必可启，败陨亦可能留下残迹。现有圣启镜像拓印未必涵盖此番改动。请先确认圣器相容，备好归元镜像，再续行。</string>
     <string name="install_anykernel_root_required">铭刻 AnyKernel3 需 root 之权。</string>
     <string name="install_anykernel_read_failed">无法读取 AnyKernel3 圣匣。</string>
     <string name="home">圣光之殿</string>
@@ -13,7 +13,7 @@
     <string name="home_click_to_install">点触蒙恩</string>
     <string name="home_working">圣光运转中</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">DeepseekSU</string>
     <string name="home_tile_system">圣域情报</string>
     <string name="home_tile_device">圣器</string>
     <string name="home_tile_storage">圣域记忆</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">探寻 KernelSU</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">探寻如何蒙恩 KernelSU 与铸造圣光阵之法</string>
-    <string name="home_learn_finasu">探寻 FinaSU</string>
+    <string name="home_learn_finasu">探寻 DeepseekSU</string>
     <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">领略 FinaSU 的功能与恩典</string>
+    <string name="home_click_to_learn_finasu">领略 DeepseekSU 的功能与恩典</string>
     <string name="home_support_title">圣光援助</string>
     <string name="home_support_content">KernelSU 永为自由开源，愿以捐赠献上圣光</string>
     <string name="home_gki_warning">自 v3.0.0 起，GKI 运转模式仅用于试炼之境，不荐于日常；镜像圣匣亦不再降下。</string>
@@ -279,7 +279,7 @@
     <string name="settings_sucompat_summary">允借 /system/bin/su 求取 Root 之权</string>
     <string name="settings_kernel_umount">解除圣光阵（灵魂之力层面）</string>
     <string name="settings_kernel_umount_summary">于灵魂之力层为所需圣器解除圣光阵</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">DeepseekSU Hide</string>
     <string name="settings_kernel_umount_unknown">未能勘验功能是否可施焉</string>
     <string name="settings_kernel_umount_values">今：%1$s · 重启后：%2$s焉</string>
     <string name="settings_kernel_umount_on">开启焉</string>
@@ -483,7 +483,7 @@
     <string name="settings_section_layout">格局</string>
     <string name="settings_support_links">首页底部圣牌</string>
     <string name="settings_support_links_summary">择首页底端所显之圣物。</string>
-    <string name="settings_support_links_finasu">探寻 FinaSU</string>
+    <string name="settings_support_links_finasu">探寻 DeepseekSU</string>
     <string name="settings_support_links_legacy">圣光援助与 KernelSU</string>
     <string name="settings_support_links_hidden">隐匿</string>
     <string name="settings_support_links_custom">自定</string>
@@ -680,11 +680,11 @@
     <string name="download_install">蒙恩</string>
     <string name="settings_finasu_hide_summary">于一定程度隐匿 Bootloader 解锁之态</string>
     <string name="settings_finasu_hide_reboot_hint">重启后真值归位</string>
-    <string name="settings_finasu_hide_failed">更易 FinaSU Hide 神恩未至</string>
+    <string name="settings_finasu_hide_failed">更易 DeepseekSU Hide 神恩未至</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">以 Root 之权运转 adbd 守望圣使</string>
     <string name="feature_external_changes_title">共享圣设已被外部修改焉</string>
-    <string name="feature_external_changes_summary">外部模块或掌圣者在 FinaSU 施展已留存圣设后修改了这些运行值。FinaSU 不会自行覆盖焉。</string>
+    <string name="feature_external_changes_summary">外部模块或掌圣者在 DeepseekSU 施展已留存圣设后修改了这些运行值。DeepseekSU 不会自行覆盖焉。</string>
     <string name="feature_external_value_on">开启焉</string>
     <string name="feature_external_value_off">关闭焉</string>
     <string name="menu_sort">排列</string>
@@ -880,7 +880,7 @@
     <string name="backup_section_content">珍藏何物</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">本域圣匣</string>
-    <string name="backup_local_summary">藏于 Download/FinaSU</string>
+    <string name="backup_local_summary">藏于 Download/DeepseekSU</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">开启圣匣</string>
     <string name="backup_modules">圣光阵</string>
@@ -1099,11 +1099,11 @@
     <string name="module_preinit_error">预启同步未成，仍守旧制</string>
     <string name="module_preinit_bootloop">屡启未成，预启暂止</string>
     <string name="module_preinit_unsupported">此内核或加载之法不容预启</string>
-    <string name="guide_welcome_title">欢迎莅临 FinaSU</string>
+    <string name="guide_welcome_title">欢迎莅临 DeepseekSU</string>
     <string name="guide_welcome_desc">内核级 Root 权柄，Zygisk 圣器、Shizuku API 圣座、VFS 路径引导与模块圣装法阵，皆已内置。</string>
     <string name="guide_repo_title">GitHub 开源圣典</string>
     <string name="guide_repo_desc">源码、问题奏报与版本谕示，皆藏于圣典库中。</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/LyraVoid/DeepseekSU</string>
     <string name="guide_repo_action">开启圣典库</string>
     <string name="guide_features_title">内置圣能</string>
     <string name="guide_features_desc">四道引擎已驻守于管理器之内，无需额外圣装模块。</string>

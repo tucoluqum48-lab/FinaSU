@@ -5,7 +5,7 @@
     <string name="feature_status_forced_summary">启动配置已经强制定好啦喵，在这里改不了哦</string>
     <string name="install_anykernel">刷入 AnyKernel3 ZIP 喵</string>
     <string name="install_anykernel_summary">用当前或未使用的 A/B 槽位跑受信任的内核安装器喵，需要 root 权限哦</string>
-    <string name="install_anykernel_warning">这个 ZIP 会以 root 权限执行喵，可能会改动好几个分区。具体写哪些分区和槽位由安装脚本说了算，FinaSU 不会覆盖槽位，也不会更新 ksud。装成功不保证开得了机，装失败了也可能已经写进去一部分了。现有的启动镜像备份未必兜得住这些改动。先确认设备兼容、准备好回滚镜像，再继续哦喵！</string>
+    <string name="install_anykernel_warning">这个 ZIP 会以 root 权限执行喵，可能会改动好几个分区。具体写哪些分区和槽位由安装脚本说了算，DeepseekSU 不会覆盖槽位，也不会更新 ksud。装成功不保证开得了机，装失败了也可能已经写进去一部分了。现有的启动镜像备份未必兜得住这些改动。先确认设备兼容、准备好回滚镜像，再继续哦喵！</string>
     <string name="install_anykernel_root_required">刷 AnyKernel3 得先有 root 权限喵！</string>
     <string name="install_anykernel_read_failed">读不了这个 AnyKernel3 ZIP 喵…</string>
     <string name="home">主页</string>
@@ -13,7 +13,7 @@
     <string name="home_click_to_install">戳一下就能装喵！</string>
     <string name="home_working">正在干活喵！</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">DeepseekSU</string>
     <string name="home_tile_system">系统信息喵</string>
     <string name="home_tile_device">设备喵</string>
     <string name="home_tile_storage">存储喵</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">了解一下 KernelSU 喵</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">看看怎么装 KernelSU、怎么写模块喵</string>
-    <string name="home_learn_finasu">了解一下 FinaSU 喵</string>
+    <string name="home_learn_finasu">了解一下 DeepseekSU 喵</string>
     <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">看看 FinaSU 有什么好玩的喵</string>
+    <string name="home_click_to_learn_finasu">看看 DeepseekSU 有什么好玩的喵</string>
     <string name="home_support_title">支持人家嘛喵</string>
     <string name="home_support_content">KernelSU 会一直免费开源喵，给开发者捐点小钱钱就是最好的鼓励啦</string>
     <string name="home_gki_warning">从 v3.0.0 起，GKI 工作模式只在测试环境用喵，人家不建议日常使唤它，镜像文件也不提供啦</string>
@@ -279,7 +279,7 @@
     <string name="settings_sucompat_summary">允许通过 /system/bin/su 拿到 Root 权限喵</string>
     <string name="settings_kernel_umount">卸载模块（内核级）喵</string>
     <string name="settings_kernel_umount_summary">在内核里帮需要的应用卸载模块喵</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">DeepseekSU Hide</string>
     <string name="settings_kernel_umount_unknown">没法确认功能是否可用喵</string>
     <string name="settings_kernel_umount_values">现在：%1$s · 重启后：%2$s喵</string>
     <string name="settings_kernel_umount_on">开启喵</string>
@@ -483,7 +483,7 @@
     <string name="settings_section_layout">布局喵</string>
     <string name="settings_support_links">首页底部小卡片喵</string>
     <string name="settings_support_links_summary">挑挑首页底下要显示什么喵～</string>
-    <string name="settings_support_links_finasu">了解一下 FinaSU 喵</string>
+    <string name="settings_support_links_finasu">了解一下 DeepseekSU 喵</string>
     <string name="settings_support_links_legacy">支持人家嘛喵与 KernelSU</string>
     <string name="settings_support_links_hidden">藏起来喵</string>
     <string name="settings_support_links_custom">自己写喵</string>
@@ -680,11 +680,11 @@
     <string name="download_install">安装喵</string>
     <string name="settings_finasu_hide_summary">在一定程度上把 Bootloader 解锁状态藏起来喵</string>
     <string name="settings_finasu_hide_reboot_hint">重启后恢复真实值喵</string>
-    <string name="settings_finasu_hide_failed">改 FinaSU Hide 失败啦喵…</string>
+    <string name="settings_finasu_hide_failed">改 DeepseekSU Hide 失败啦喵…</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">用 Root 权限跑 adbd 守护进程喵</string>
     <string name="feature_external_changes_title">共享设定已被外部修改喵</string>
-    <string name="feature_external_changes_summary">外部模块或管理器在 FinaSU 应用已保存设定后修改了这些运行值。FinaSU 不会自己覆盖喵。</string>
+    <string name="feature_external_changes_summary">外部模块或管理器在 DeepseekSU 应用已保存设定后修改了这些运行值。DeepseekSU 不会自己覆盖喵。</string>
     <string name="feature_external_value_on">开启喵</string>
     <string name="feature_external_value_off">关闭喵</string>
     <string name="menu_sort">排序喵</string>
@@ -880,7 +880,7 @@
     <string name="backup_section_content">备份啥喵</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">本地文件夹喵</string>
-    <string name="backup_local_summary">存到 Download/FinaSU 喵</string>
+    <string name="backup_local_summary">存到 Download/DeepseekSU 喵</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">打开备份文件夹喵</string>
     <string name="backup_modules">模块喵</string>
@@ -1099,11 +1099,11 @@
     <string name="module_preinit_error">预初始化同步失败了喵，先留着上次的配置</string>
     <string name="module_preinit_bootloop">试了好几次都没启动成，预初始化先歇会儿喵</string>
     <string name="module_preinit_unsupported">现在的心或者加载方式不支持预初始化喵</string>
-    <string name="guide_welcome_title">欢迎使用 FinaSU 喵</string>
+    <string name="guide_welcome_title">欢迎使用 DeepseekSU 喵</string>
     <string name="guide_welcome_desc">内核级 Root 管理，Zygisk 实现、Shizuku API 后端、VFS 路径重定向和模块挂载引擎都已经内置好啦喵。</string>
     <string name="guide_repo_title">在 GitHub 上开源喵</string>
     <string name="guide_repo_desc">源码、问题反馈和版本更新都乖乖待在仓库里喵。</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/LyraVoid/DeepseekSU</string>
     <string name="guide_repo_action">打开仓库喵</string>
     <string name="guide_features_title">内置能力喵</string>
     <string name="guide_features_desc">四个引擎都装进管理器里啦，不用再额外安装模块喵。</string>

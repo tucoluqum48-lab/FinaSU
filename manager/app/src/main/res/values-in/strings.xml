@@ -5,7 +5,7 @@
     <string name="feature_status_forced_summary">Dipaksa oleh konfigurasi boot; tidak dapat diubah di sini</string>
     <string name="install_anykernel">Flash AnyKernel3 ZIP</string>
     <string name="install_anykernel_summary">Jalankan pemasang kernel tepercaya pada slot saat ini atau slot A/B yang tidak digunakan. Memerlukan Root.</string>
-    <string name="install_anykernel_warning">ZIP ini berjalan dengan Root dan dapat mengubah beberapa partisi. Program pemasang mengontrol partisi dan slot mana yang ditulis; FinaSU tidak menimpa slot atau menyegarkan ksud. Pemasangan yang berhasil tidak menjamin perangkat dapat boot, dan kegagalan dapat meninggalkan perubahan sebagian. Cadangan image boot yang ada mungkin tidak mencakup perubahan ini. Pastikan kompatibilitas perangkat dan siapkan image pemulihan sebelum melanjutkan.</string>
+    <string name="install_anykernel_warning">ZIP ini berjalan dengan Root dan dapat mengubah beberapa partisi. Program pemasang mengontrol partisi dan slot mana yang ditulis; DeepseekSU tidak menimpa slot atau menyegarkan ksud. Pemasangan yang berhasil tidak menjamin perangkat dapat boot, dan kegagalan dapat meninggalkan perubahan sebagian. Cadangan image boot yang ada mungkin tidak mencakup perubahan ini. Pastikan kompatibilitas perangkat dan siapkan image pemulihan sebelum melanjutkan.</string>
     <string name="install_anykernel_root_required">Root diperlukan untuk mem-flash AnyKernel3.</string>
     <string name="install_anykernel_read_failed">Tidak dapat membaca ZIP AnyKernel3.</string>
     <string name="home">Beranda</string>
@@ -13,7 +13,7 @@
     <string name="home_click_to_install">Ketuk untuk memasang</string>
     <string name="home_working">Berfungsi</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">DeepseekSU</string>
     <string name="home_tile_system">Info sistem</string>
     <string name="home_tile_device">Perangkat</string>
     <string name="home_tile_storage">Penyimpanan</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">Pelajari KernelSU</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/id_ID/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">Pelajari cara memasang KernelSU dan menggunakan modul</string>
-    <string name="home_learn_finasu">Pelajari FinaSU</string>
+    <string name="home_learn_finasu">Pelajari DeepseekSU</string>
     <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">Jelajahi fitur dan modul FinaSU.</string>
+    <string name="home_click_to_learn_finasu">Jelajahi fitur dan modul DeepseekSU.</string>
     <string name="home_support_title">Dukung Kami</string>
     <string name="home_support_content">KernelSU gratis dan sumber terbuka, sekarang dan selamanya. Namun, Anda dapat menunjukkan kepedulian Anda kepada kami dengan memberikan donasi.</string>
     <string name="home_gki_warning">Mulai dari v3.0.0, fungsi mode GKI dibatasi untuk lingkungan pengujian. Kami tidak menyarankan untuk penggunaan harian, dan berkas image tidak akan lagi disediakan.</string>
@@ -279,7 +279,7 @@
     <string name="settings_sucompat_summary">Izinkan akses root melalui /system/bin/su pada proses baru yang dibuat</string>
     <string name="settings_kernel_umount">Umount kernel</string>
     <string name="settings_kernel_umount_summary">Unmount modul dari kernel pada profil aplikasi</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">DeepseekSU Hide</string>
     <string name="settings_kernel_umount_unknown">Tidak dapat mengonfirmasi ketersediaan fitur</string>
     <string name="settings_kernel_umount_values">Saat ini: %1$s · Disimpan untuk reboot: %2$s</string>
     <string name="settings_kernel_umount_on">Aktif</string>
@@ -482,7 +482,7 @@
     <string name="settings_home_hide_status_tag_summary">Sembunyikan label mode berjalan pada kartu status beranda.</string>
     <string name="settings_support_links">Kartu bawah beranda</string>
     <string name="settings_support_links_summary">Pilih apa yang ditampilkan di bagian bawah layar beranda.</string>
-    <string name="settings_support_links_finasu">Pelajari FinaSU</string>
+    <string name="settings_support_links_finasu">Pelajari DeepseekSU</string>
     <string name="settings_support_links_legacy">Dukungan dan KernelSU</string>
     <string name="settings_support_links_hidden">Disembunyikan</string>
     <string name="settings_theme_store_mode">Mode toko tema</string>
@@ -671,11 +671,11 @@
     <string name="download_install">Pasang</string>
     <string name="settings_finasu_hide_summary">Sembunyikan sebagian status bootloader yang terbuka</string>
     <string name="settings_finasu_hide_reboot_hint">Nilai sebenarnya kembali setelah reboot</string>
-    <string name="settings_finasu_hide_failed">Gagal mengubah FinaSU Hide</string>
+    <string name="settings_finasu_hide_failed">Gagal mengubah DeepseekSU Hide</string>
     <string name="settings_adb_root">ADB root</string>
     <string name="settings_adb_root_summary">Jalankan daemon adbd dengan hak akses root</string>
-    <string name="feature_external_changes_title">Pengaturan bersama diubah di luar FinaSU</string>
-    <string name="feature_external_changes_summary">Modul atau manajer eksternal mengubah nilai runtime ini setelah FinaSU menerapkan pengaturan tersimpannya. FinaSU tidak akan menimpanya secara otomatis.</string>
+    <string name="feature_external_changes_title">Pengaturan bersama diubah di luar DeepseekSU</string>
+    <string name="feature_external_changes_summary">Modul atau manajer eksternal mengubah nilai runtime ini setelah DeepseekSU menerapkan pengaturan tersimpannya. DeepseekSU tidak akan menimpanya secara otomatis.</string>
     <string name="feature_external_value_on">Aktif</string>
     <string name="feature_external_value_off">Nonaktif</string>
     <string name="menu_sort">Urutkan</string>
@@ -871,7 +871,7 @@
     <string name="backup_section_content">Yang dicadangkan</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">Folder lokal</string>
-    <string name="backup_local_summary">Disimpan ke Download/FinaSU</string>
+    <string name="backup_local_summary">Disimpan ke Download/DeepseekSU</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">Buka folder cadangan</string>
     <string name="backup_modules">Modul</string>
@@ -1099,11 +1099,11 @@
     <string name="module_preinit_error">Sinkronisasi pra-inisialisasi gagal; konfigurasi sebelumnya dipertahankan</string>
     <string name="module_preinit_bootloop">Pra-inisialisasi dijeda setelah beberapa kali percobaan boot</string>
     <string name="module_preinit_unsupported">Pra-inisialisasi tidak tersedia pada kernel atau mode muat ini</string>
-    <string name="guide_welcome_title">Selamat datang di FinaSU</string>
+    <string name="guide_welcome_title">Selamat datang di DeepseekSU</string>
     <string name="guide_welcome_desc">Manajemen root tingkat kernel dengan engine Zygisk, backend Shizuku API, pengalihan jalur VFS, dan engine pemasangan modul yang sudah terpasang.</string>
     <string name="guide_repo_title">Sumber terbuka di GitHub</string>
     <string name="guide_repo_desc">Kode sumber, laporan masalah, dan catatan rilis semuanya tersedia di repositori.</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/LyraVoid/DeepseekSU</string>
     <string name="guide_repo_action">Buka repositori</string>
     <string name="guide_features_title">Fitur bawaan</string>
     <string name="guide_features_desc">Empat engine berjalan di dalam pengelola, tanpa perlu modul tambahan.</string>

@@ -16,7 +16,7 @@
     <string name="sui_state_disabled">Belum aktif</string>
     <string name="sui_state_enabled">Berjalan</string>
     <string name="sui_state_pending">Aktif, menunggu mulai ulang</string>
-    <string name="sui_state_external">Aktif; disuntikkan oleh penyedia Zygisk pihak ketiga, jadi FinaSU tidak dapat memverifikasi statusnya</string>
+    <string name="sui_state_external">Aktif; disuntikkan oleh penyedia Zygisk pihak ketiga, jadi DeepseekSU tidak dapat memverifikasi statusnya</string>
     <string name="sui_state_unavailable">Tidak tersedia</string>
     <string name="sui_state_error">Perlu diperiksa</string>
     <string name="sui_reason_zygisk_disabled">Aktifkan Zygisk dulu</string>
@@ -26,7 +26,7 @@
     <string name="sui_reason_conflict">Ada pemasangan Sui lain: %1$s</string>
     <string name="sui_reason_payload_missing">Payload Sui tidak lengkap; gunakan perbaikan</string>
     <string name="sui_reason_module_disabled">Modul Sui dinonaktifkan di disk</string>
-    <string name="sui_reason_enabled_externally">Sui diaktifkan di luar FinaSU</string>
+    <string name="sui_reason_enabled_externally">Sui diaktifkan di luar DeepseekSU</string>
     <string name="sui_reason_unknown">Sui melaporkan status yang tidak terduga</string>
     <string name="sui_zygisk_external">penyedia pihak ketiga</string>
     <string name="sui_zygisk_disabled">nonaktif</string>
@@ -53,7 +53,7 @@
     <string name="sui_default_mode_summary">Dipakai untuk aplikasi tanpa aturan sendiri</string>
     <string name="sui_hidden_count">Aplikasi tersembunyi dari Sui</string>
     <string name="sui_notifications_off">Notifikasi latar nonaktif</string>
-    <string name="sui_notifications_off_summary">Beri izin notifikasi agar permintaan sampai saat FinaSU di latar belakang</string>
+    <string name="sui_notifications_off_summary">Beri izin notifikasi agar permintaan sampai saat DeepseekSU di latar belakang</string>
     <string name="sui_permissions_filter">Filter</string>
     <string name="sui_mode_default">Bawaan</string>
     <string name="sui_mode_root">Izinkan root</string>

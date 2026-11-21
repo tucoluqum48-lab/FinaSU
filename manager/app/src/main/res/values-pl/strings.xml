@@ -5,7 +5,7 @@
     <string name="feature_status_forced_summary">Wymuszone przez konfigurację rozruchu; nie można tego tutaj zmienić</string>
     <string name="install_anykernel">Wgraj plik ZIP AnyKernel3</string>
     <string name="install_anykernel_summary">Uruchamia zaufany instalator jądra na bieżącym lub nieużywanym slocie A/B. Wymaga uprawnień Root.</string>
-    <string name="install_anykernel_warning">Ten plik ZIP działa z uprawnieniami root i może modyfikować wiele partycji. To instalator decyduje, które partycje i sloty zostaną zapisane; FinaSU nie nadpisuje slotu ani nie odświeża ksud. Pomyślna instalacja nie gwarantuje możliwości uruchomienia, a niepowodzenie może pozostawić częściowe zmiany. Istniejące kopie zapasowe obrazu boot mogą nie obejmować tych zmian. Przed kontynuowaniem potwierdź zgodność urządzenia i przygotuj obraz do odzyskiwania.</string>
+    <string name="install_anykernel_warning">Ten plik ZIP działa z uprawnieniami root i może modyfikować wiele partycji. To instalator decyduje, które partycje i sloty zostaną zapisane; DeepseekSU nie nadpisuje slotu ani nie odświeża ksud. Pomyślna instalacja nie gwarantuje możliwości uruchomienia, a niepowodzenie może pozostawić częściowe zmiany. Istniejące kopie zapasowe obrazu boot mogą nie obejmować tych zmian. Przed kontynuowaniem potwierdź zgodność urządzenia i przygotuj obraz do odzyskiwania.</string>
     <string name="install_anykernel_root_required">Do wgrania AnyKernel3 wymagane są uprawnienia root.</string>
     <string name="install_anykernel_read_failed">Nie można odczytać pliku ZIP AnyKernel3.</string>
     <string name="home">Strona główna</string>
@@ -13,7 +13,7 @@
     <string name="home_click_to_install">Kliknij, aby zainstalować</string>
     <string name="home_working">Działa</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">DeepseekSU</string>
     <string name="home_tile_system">Informacje o systemie</string>
     <string name="home_tile_device">Urządzenie</string>
     <string name="home_tile_storage">Pamięć</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">Poznaj KernelSU</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">Dowiedz się jak zainstalować KernelSU i jak korzystać z modułów.</string>
-    <string name="home_learn_finasu">Poznaj FinaSU</string>
+    <string name="home_learn_finasu">Poznaj DeepseekSU</string>
     <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">Odkryj funkcje i moduły FinaSU.</string>
+    <string name="home_click_to_learn_finasu">Odkryj funkcje i moduły DeepseekSU.</string>
     <string name="home_support_title">Wesprzyj nas</string>
     <string name="home_support_content">KernelSU jest i zawsze będzie darmowy oraz otwarty. Niemniej jednak możesz nam pokazać, że Ci zależy, wysyłając darowiznę.</string>
     <string name="home_gki_warning">Począwszy od wersji 3.0.0, tryb pracy GKI będzie używany wyłącznie w środowiskach testowych. Nie zalecamy jego stosowania w codziennym użytkowaniu, a pliki obrazów nie będą już udostępniane.</string>
@@ -283,7 +283,7 @@ Przed kontynuowaniem upewnij się, że bootloader jest odblokowany!</string>
     <string name="settings_sucompat_summary">Pozwala aplikacjom z uprawnieniami Superużytkownika w profilu aplikacji uzyskać shell superużytkownika przez wykonanie /system/bin/su; skuteczne tylko dla nowych procesów.</string>
     <string name="settings_kernel_umount">Odmontowanie jądra</string>
     <string name="settings_kernel_umount_summary">Zachowanie odmontowania na poziomie jądra kontrolowane przez KernelSU</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">DeepseekSU Hide</string>
     <string name="settings_kernel_umount_unknown">Nie można potwierdzić dostępności funkcji</string>
     <string name="settings_kernel_umount_values">Bieżące: %1$s · Zapisano do ponownego uruchomienia: %2$s</string>
     <string name="settings_kernel_umount_on">Włączone</string>
@@ -486,7 +486,7 @@ Przed kontynuowaniem upewnij się, że bootloader jest odblokowany!</string>
     <string name="settings_home_hide_status_tag_summary">Ukrywa etykietę trybu pracy na karcie stanu strony głównej.</string>
     <string name="settings_support_links">Dolna karta ekranu głównego</string>
     <string name="settings_support_links_summary">Wybierz, co ma się pojawiać na dole ekranu głównego.</string>
-    <string name="settings_support_links_finasu">Poznaj FinaSU</string>
+    <string name="settings_support_links_finasu">Poznaj DeepseekSU</string>
     <string name="settings_support_links_legacy">Wsparcie i KernelSU</string>
     <string name="settings_support_links_hidden">Ukryte</string>
     <string name="settings_theme_store_mode">Tryb sklepu z motywami</string>
@@ -675,11 +675,11 @@ Przed kontynuowaniem upewnij się, że bootloader jest odblokowany!</string>
     <string name="download_install">Instaluj</string>
     <string name="settings_finasu_hide_summary">Częściowo ukrywa stan odblokowania Bootloadera</string>
     <string name="settings_finasu_hide_reboot_hint">Rzeczywista wartość wróci po ponownym uruchomieniu</string>
-    <string name="settings_finasu_hide_failed">Nie udało się zmienić FinaSU Hide</string>
+    <string name="settings_finasu_hide_failed">Nie udało się zmienić DeepseekSU Hide</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">Uruchamiaj demon adbd z uprawnieniami root</string>
-    <string name="feature_external_changes_title">Udostępnione ustawienia zostały zmienione poza FinaSU</string>
-    <string name="feature_external_changes_summary">Zewnętrzny moduł lub menedżer zmienił te wartości środowiska wykonawczego po zastosowaniu przez FinaSU zapisanych ustawień. FinaSU nie nadpisze ich automatycznie.</string>
+    <string name="feature_external_changes_title">Udostępnione ustawienia zostały zmienione poza DeepseekSU</string>
+    <string name="feature_external_changes_summary">Zewnętrzny moduł lub menedżer zmienił te wartości środowiska wykonawczego po zastosowaniu przez DeepseekSU zapisanych ustawień. DeepseekSU nie nadpisze ich automatycznie.</string>
     <string name="feature_external_value_on">Włączone</string>
     <string name="feature_external_value_off">Wyłączone</string>
     <string name="menu_sort">Sortuj</string>
@@ -875,7 +875,7 @@ Przed kontynuowaniem upewnij się, że bootloader jest odblokowany!</string>
     <string name="backup_section_content">Co kopiować</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">Folder lokalny</string>
-    <string name="backup_local_summary">Zapisywane w Download/FinaSU</string>
+    <string name="backup_local_summary">Zapisywane w Download/DeepseekSU</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">Otwórz folder kopii</string>
     <string name="backup_modules">Moduły</string>
@@ -1103,11 +1103,11 @@ Przed kontynuowaniem upewnij się, że bootloader jest odblokowany!</string>
     <string name="module_preinit_error">Synchronizacja preinicjalizacji nie powiodła się; zachowano poprzednią konfigurację</string>
     <string name="module_preinit_bootloop">Preinicjalizacja wstrzymana po kilku próbach rozruchu</string>
     <string name="module_preinit_unsupported">Preinicjalizacja niedostępna w tym jądrze lub trybie ładowania</string>
-    <string name="guide_welcome_title">Witamy w FinaSU</string>
+    <string name="guide_welcome_title">Witamy w DeepseekSU</string>
     <string name="guide_welcome_desc">Zarządzanie rootem na poziomie jądra z wbudowanym silnikiem Zygisk, backendem Shizuku API, przekierowaniem ścieżek VFS i silnikiem montowania modułów.</string>
     <string name="guide_repo_title">Otwarte źródła na GitHubie</string>
     <string name="guide_repo_desc">Kod źródłowy, zgłoszenia problemów i informacje o wydaniach znajdują się w repozytorium.</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/LyraVoid/DeepseekSU</string>
     <string name="guide_repo_action">Otwórz repozytorium</string>
     <string name="guide_features_title">Wbudowane funkcje</string>
     <string name="guide_features_desc">Cztery silniki działają w menedżerze, bez potrzeby instalowania dodatkowych modułów.</string>

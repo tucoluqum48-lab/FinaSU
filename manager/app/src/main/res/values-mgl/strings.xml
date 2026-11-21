@@ -5,7 +5,7 @@
     <string name="feature_status_forced_summary">已由星界启动仪式强制指定，无法在此修改</string>
     <string name="install_anykernel">注入 AnyKernel3 ZIP</string>
     <string name="install_anykernel_summary">以当前星槽或未使用的 A/B 星槽运行可信的心之契约安装器，需要 root 权限。</string>
-    <string name="install_anykernel_warning">此 ZIP 将以 root 施法，可能改写多个星域分区。实际写入的分区与星槽由安装咒式决定，FinaSU 不会覆盖星槽，也不更新 ksud。变身成功不保证能够苏醒，变身失败也可能留下部分改写。已有的启动镜像备份未必覆盖这些改动。请先确认法器相容性并备好回滚镜像，再继续。</string>
+    <string name="install_anykernel_warning">此 ZIP 将以 root 施法，可能改写多个星域分区。实际写入的分区与星槽由安装咒式决定，DeepseekSU 不会覆盖星槽，也不更新 ksud。变身成功不保证能够苏醒，变身失败也可能留下部分改写。已有的启动镜像备份未必覆盖这些改动。请先确认法器相容性并备好回滚镜像，再继续。</string>
     <string name="install_anykernel_root_required">注入 AnyKernel3 需要 root 权限。</string>
     <string name="install_anykernel_read_failed">无法读取 AnyKernel3 ZIP。</string>
     <string name="home">魔法大厅</string>
@@ -13,7 +13,7 @@
     <string name="home_click_to_install">点击觉醒</string>
     <string name="home_working">神域展开</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">DeepseekSU</string>
     <string name="home_tile_system">魔法界信息</string>
     <string name="home_tile_device">法器</string>
     <string name="home_tile_storage">星之存储</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">了解 KernelSU</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/zh_CN/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">了解如何安装 KernelSU 以及如何缔造魔法阵</string>
-    <string name="home_learn_finasu">了解 FinaSU</string>
+    <string name="home_learn_finasu">了解 DeepseekSU</string>
     <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">了解 FinaSU 的魔法与缔造魔法阵之术</string>
+    <string name="home_click_to_learn_finasu">了解 DeepseekSU 的魔法与缔造魔法阵之术</string>
     <string name="home_support_title">支持缔造者</string>
     <string name="home_support_content">KernelSU 将永远免费开源，向缔造者献上心意以表支持</string>
     <string name="home_gki_warning">自 v3.0.0 起 GKI 工作模式仅用于测试结界，不建议日常使用，也不再提供镜像咒式</string>
@@ -279,7 +279,7 @@
     <string name="settings_sucompat_summary">允许经由 /system/bin/su 获取 Root 权限</string>
     <string name="settings_kernel_umount">解除魔法阵（心之契约级）</string>
     <string name="settings_kernel_umount_summary">由心之契约为需要的应用解除魔法阵</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">DeepseekSU Hide</string>
     <string name="settings_kernel_umount_unknown">无法确认功能是否可用（魔法契约）</string>
     <string name="settings_kernel_umount_values">此刻：%1$s · 重铸后：%2$s（魔法契约）</string>
     <string name="settings_kernel_umount_on">开启（魔法契约）</string>
@@ -482,7 +482,7 @@
     <string name="settings_home_hide_status_tag_summary">隐遁魔法大厅状态卡上的运行模式标签。</string>
     <string name="settings_support_links">首页底部魔法阵</string>
     <string name="settings_support_links_summary">选择首页底部要缔造的魔法。</string>
-    <string name="settings_support_links_finasu">了解 FinaSU</string>
+    <string name="settings_support_links_finasu">了解 DeepseekSU</string>
     <string name="settings_support_links_legacy">支持缔造者与 KernelSU</string>
     <string name="settings_support_links_hidden">隐匿</string>
     <string name="settings_theme_store_mode">星幻商店模式</string>
@@ -671,11 +671,11 @@
     <string name="download_install">结下</string>
     <string name="settings_finasu_hide_summary">于一定程度上隐匿 Bootloader 解锁之态</string>
     <string name="settings_finasu_hide_reboot_hint">重启后复归真值</string>
-    <string name="settings_finasu_hide_failed">变更 FinaSU Hide 未成</string>
+    <string name="settings_finasu_hide_failed">变更 DeepseekSU Hide 未成</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">以 Root 权限运行 adbd 守护进程</string>
     <string name="feature_external_changes_title">共享设定已被外部修改（魔法契约）</string>
-    <string name="feature_external_changes_summary">外部模块或魔法管理者在 FinaSU 施展已铭刻设定后修改了这些运行值。FinaSU 不会自动覆盖。</string>
+    <string name="feature_external_changes_summary">外部模块或魔法管理者在 DeepseekSU 施展已铭刻设定后修改了这些运行值。DeepseekSU 不会自动覆盖。</string>
     <string name="feature_external_value_on">开启（魔法契约）</string>
     <string name="feature_external_value_off">关闭（魔法契约）</string>
     <string name="menu_sort">排序</string>
@@ -871,7 +871,7 @@
     <string name="backup_section_content">封存何物</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">本域星匣</string>
-    <string name="backup_local_summary">封存于 Download/FinaSU</string>
+    <string name="backup_local_summary">封存于 Download/DeepseekSU</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">开启星忆之匣</string>
     <string name="backup_modules">魔法阵</string>
@@ -1099,11 +1099,11 @@
     <string name="module_preinit_error">预初始化同步失败，仍守旧有配置</string>
     <string name="module_preinit_bootloop">多次觉醒未成，预初始化已暂停</string>
     <string name="module_preinit_unsupported">当前心之契约或加载模式不支持预初始化</string>
-    <string name="guide_welcome_title">欢迎踏入 FinaSU 魔法领域</string>
+    <string name="guide_welcome_title">欢迎踏入 DeepseekSU 魔法领域</string>
     <string name="guide_welcome_desc">以内核之力掌管 root，Zygisk 术式、Shizuku API 灵基、VFS 路径转移与模块召唤法阵皆已内置。</string>
     <string name="guide_repo_title">GitHub 开源法卷</string>
     <string name="guide_repo_desc">源码、问题反馈与版本更新，皆藏于法典库中。</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/LyraVoid/DeepseekSU</string>
     <string name="guide_repo_action">开启法典库</string>
     <string name="guide_features_title">内置魔法</string>
     <string name="guide_features_desc">四道法阵已封入管理器，无须外加魔法模块。</string>

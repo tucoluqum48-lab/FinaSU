@@ -16,7 +16,7 @@
     <string name="sui_state_disabled">Não ativado</string>
     <string name="sui_state_enabled">Em execução</string>
     <string name="sui_state_pending">Ativado, aguardando reinicialização</string>
-    <string name="sui_state_external">Ativado; é injetado por um provedor Zygisk de terceiros, então o FinaSU não consegue verificar o estado</string>
+    <string name="sui_state_external">Ativado; é injetado por um provedor Zygisk de terceiros, então o DeepseekSU não consegue verificar o estado</string>
     <string name="sui_state_unavailable">Indisponível</string>
     <string name="sui_state_error">Precisa de atenção</string>
     <string name="sui_reason_zygisk_disabled">Ative o Zygisk primeiro</string>
@@ -26,7 +26,7 @@
     <string name="sui_reason_conflict">Já existe outra instalação do Sui: %1$s</string>
     <string name="sui_reason_payload_missing">O payload do Sui está incompleto; use o reparo</string>
     <string name="sui_reason_module_disabled">O módulo Sui está desativado no disco</string>
-    <string name="sui_reason_enabled_externally">O Sui foi ativado fora do FinaSU</string>
+    <string name="sui_reason_enabled_externally">O Sui foi ativado fora do DeepseekSU</string>
     <string name="sui_reason_unknown">O Sui relatou um estado inesperado</string>
     <string name="sui_zygisk_external">provedor de terceiros</string>
     <string name="sui_zygisk_disabled">desativado</string>
@@ -53,7 +53,7 @@
     <string name="sui_default_mode_summary">Usada para apps sem regra própria</string>
     <string name="sui_hidden_count">Apps ocultos do Sui</string>
     <string name="sui_notifications_off">Avisos em segundo plano desativados</string>
-    <string name="sui_notifications_off_summary">Conceda a permissão de notificações para receber solicitações com o FinaSU em segundo plano</string>
+    <string name="sui_notifications_off_summary">Conceda a permissão de notificações para receber solicitações com o DeepseekSU em segundo plano</string>
     <string name="sui_permissions_filter">Filtro</string>
     <string name="sui_mode_default">Padrão</string>
     <string name="sui_mode_root">Permitir root</string>

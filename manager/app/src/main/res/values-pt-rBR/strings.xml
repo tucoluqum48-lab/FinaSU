@@ -5,7 +5,7 @@
     <string name="feature_status_forced_summary">Forçado pela configuração de inicialização; não pode ser alterado aqui</string>
     <string name="install_anykernel">Instalar ZIP AnyKernel3</string>
     <string name="install_anykernel_summary">Executa um instalador de kernel confiável no slot atual ou em um slot A/B não utilizado. Requer Root.</string>
-    <string name="install_anykernel_warning">Este ZIP é executado com root e pode modificar várias partições. O instalador controla quais partições e slots são gravados; o FinaSU não substitui o slot nem atualiza o ksud. Uma instalação bem-sucedida não garante a inicialização e uma falha pode deixar alterações parciais. Os backups existentes da imagem de boot podem não cobrir essas alterações. Confirme a compatibilidade do dispositivo e prepare uma imagem de recuperação antes de continuar.</string>
+    <string name="install_anykernel_warning">Este ZIP é executado com root e pode modificar várias partições. O instalador controla quais partições e slots são gravados; o DeepseekSU não substitui o slot nem atualiza o ksud. Uma instalação bem-sucedida não garante a inicialização e uma falha pode deixar alterações parciais. Os backups existentes da imagem de boot podem não cobrir essas alterações. Confirme a compatibilidade do dispositivo e prepare uma imagem de recuperação antes de continuar.</string>
     <string name="install_anykernel_root_required">É necessário root para instalar o AnyKernel3.</string>
     <string name="install_anykernel_read_failed">Não foi possível ler o ZIP do AnyKernel3.</string>
     <string name="home">Início</string>
@@ -13,7 +13,7 @@
     <string name="home_click_to_install">Clique para instalar</string>
     <string name="home_working">Em execução</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">DeepseekSU</string>
     <string name="home_tile_system">Informações do sistema</string>
     <string name="home_tile_device">Dispositivo</string>
     <string name="home_tile_storage">Armazenamento</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">Saiba mais sobre o KernelSU</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/pt_BR/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">Saiba como instalar o KernelSU e usar os módulos</string>
-    <string name="home_learn_finasu">Saiba mais sobre o FinaSU</string>
+    <string name="home_learn_finasu">Saiba mais sobre o DeepseekSU</string>
     <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">Descubra os recursos e módulos do FinaSU.</string>
+    <string name="home_click_to_learn_finasu">Descubra os recursos e módulos do DeepseekSU.</string>
     <string name="home_support_title">Apoie-nos</string>
     <string name="home_support_content">KernelSU sempre foi e sempre será, gratuito e de código aberto. No entanto, você pode nos ajudar enviando uma pequena doação.</string>
     <string name="home_gki_warning">A partir da v3.0.0, o modo de trabalho GKI será usado apenas em ambientes de teste. Não o recomendamos para uso diário, e os arquivos de imagem não serão mais fornecidos.</string>
@@ -281,7 +281,7 @@
     <string name="settings_sucompat_summary">Permite que aplicativos com permissão de Superusuário no Perfil do App obtenham um shell de superusuário executando /system/bin/su; efetivo apenas para novos processos.</string>
     <string name="settings_kernel_umount">Desmontar kernel</string>
     <string name="settings_kernel_umount_summary">Comportamento de desmontagem no nível do kernel controlado pelo KernelSU</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">DeepseekSU Hide</string>
     <string name="settings_kernel_umount_unknown">Não foi possível confirmar a disponibilidade do recurso</string>
     <string name="settings_kernel_umount_values">Atual: %1$s · Salvo para reinicialização: %2$s</string>
     <string name="settings_kernel_umount_on">Ativado</string>
@@ -484,7 +484,7 @@
     <string name="settings_home_hide_status_tag_summary">Oculta a etiqueta do modo de execução no cartão de status da tela inicial.</string>
     <string name="settings_support_links">Cartão inferior da tela inicial</string>
     <string name="settings_support_links_summary">Escolha o que exibir na parte inferior da tela inicial.</string>
-    <string name="settings_support_links_finasu">Saiba mais sobre o FinaSU</string>
+    <string name="settings_support_links_finasu">Saiba mais sobre o DeepseekSU</string>
     <string name="settings_support_links_legacy">Apoio e KernelSU</string>
     <string name="settings_support_links_hidden">Oculto</string>
     <string name="settings_theme_store_mode">Modo da loja de temas</string>
@@ -673,11 +673,11 @@
     <string name="download_install">Instalar</string>
     <string name="settings_finasu_hide_summary">Oculta parcialmente o estado de desbloqueio do Bootloader</string>
     <string name="settings_finasu_hide_reboot_hint">O valor real retorna após reiniciar</string>
-    <string name="settings_finasu_hide_failed">Falha ao alterar o FinaSU Hide</string>
+    <string name="settings_finasu_hide_failed">Falha ao alterar o DeepseekSU Hide</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">Executar o daemon adbd com privilégios de root</string>
-    <string name="feature_external_changes_title">As configurações compartilhadas foram alteradas fora do FinaSU</string>
-    <string name="feature_external_changes_summary">Um módulo ou gerenciador externo alterou esses valores de tempo de execução depois que o FinaSU aplicou suas configurações salvas. FinaSU não os substituirá automaticamente.</string>
+    <string name="feature_external_changes_title">As configurações compartilhadas foram alteradas fora do DeepseekSU</string>
+    <string name="feature_external_changes_summary">Um módulo ou gerenciador externo alterou esses valores de tempo de execução depois que o DeepseekSU aplicou suas configurações salvas. DeepseekSU não os substituirá automaticamente.</string>
     <string name="feature_external_value_on">Ativado</string>
     <string name="feature_external_value_off">Desativado</string>
     <string name="menu_sort">Ordenar</string>
@@ -873,7 +873,7 @@
     <string name="backup_section_content">O que copiar</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">Pasta local</string>
-    <string name="backup_local_summary">Salvo em Download/FinaSU</string>
+    <string name="backup_local_summary">Salvo em Download/DeepseekSU</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">Abrir pasta de backup</string>
     <string name="backup_modules">Módulos</string>
@@ -1101,11 +1101,11 @@
     <string name="module_preinit_error">Falha ao sincronizar a pré-inicialização; a configuração anterior foi mantida</string>
     <string name="module_preinit_bootloop">Pré-inicialização pausada após várias tentativas de inicialização</string>
     <string name="module_preinit_unsupported">Pré-inicialização indisponível neste kernel ou modo de carregamento</string>
-    <string name="guide_welcome_title">Boas-vindas ao FinaSU</string>
+    <string name="guide_welcome_title">Boas-vindas ao DeepseekSU</string>
     <string name="guide_welcome_desc">Gerenciamento de root em nível de kernel com motor Zygisk, backend da API Shizuku, redirecionamento de caminhos VFS e motor de montagem de módulos integrados.</string>
     <string name="guide_repo_title">Código aberto no GitHub</string>
     <string name="guide_repo_desc">O código-fonte, os relatórios de problemas e as notas de versão ficam todos no repositório.</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/LyraVoid/DeepseekSU</string>
     <string name="guide_repo_action">Abrir repositório</string>
     <string name="guide_features_title">Recursos integrados</string>
     <string name="guide_features_desc">Quatro motores executam no gerenciador, sem necessidade de módulos extras.</string>

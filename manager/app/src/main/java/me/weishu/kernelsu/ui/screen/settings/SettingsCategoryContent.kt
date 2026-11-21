@@ -1,5 +1,8 @@
 package me.weishu.kernelsu.ui.screen.settings
 
+import me.weishu.kernelsu.ui.webui.WebUIActivity
+import androidx.compose.material.icons.filled.Extension
+import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.compose.foundation.layout.padding
@@ -684,6 +687,47 @@ fun FunctionCategoryContent(uiState: SettingsUiState, actions: SettingsScreenAct
                         },
                         leadingContent = { Icon(Icons.Filled.LayersClear, null) },
                         onClick = actions.onOpenUmountPaths,
+                    )
+                },
+                {
+                    // KPM 管理：打开 kpm_bridge 模块里的本地 WebUI（/data/adb/modules/kpm_bridge/webroot）
+                    val ctx = LocalContext.current
+                    SegmentedListItem(
+                        headlineContent = { Text("KPM 模块管理") },
+                        supportingContent = { Text("本地 KPM 界面（内置，无需模块）") },
+                        leadingContent = { Icon(Icons.Filled.Extension, null) },
+                        onClick = {
+                            // 与 BakaSU 一致：先自愈（工具/脚本/内置 WebUI），再打开内置界面。
+                            // 用后台线程 + runBlocking，避免在 onClick 里引入协程作用域依赖。
+                            val appCtx = ctx.applicationContext
+                            Thread {
+                                runCatching {
+                                    kotlinx.coroutines.runBlocking {
+                                        val repo = me.weishu.kernelsu.data.kpm.KpmRepository(appCtx)
+                                        repo.bootstrap()
+                                        repo.ensureWebUiModule()
+                                    }
+                                }
+                                android.os.Handler(android.os.Looper.getMainLooper()).post {
+                                    runCatching {
+                                        ctx.startActivity(
+                                            Intent(ctx, WebUIActivity::class.java).setData(
+                                                Uri.Builder()
+                                                    .scheme("kernelsu")
+                                                    .authority("webui")
+                                                    .appendQueryParameter(
+                                                        "id",
+                                                        me.weishu.kernelsu.ui.webui.BuiltinWebUI.KPM_ID,
+                                                    )
+                                                    .build(),
+                                            ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                                        )
+                                    }.onFailure {
+                                        Toast.makeText(ctx, "打开 KPM 界面失败", Toast.LENGTH_SHORT).show()
+                                    }
+                                }
+                            }.start()
+                        },
                     )
                 },
                 {

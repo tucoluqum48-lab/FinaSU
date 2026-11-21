@@ -16,7 +16,7 @@
     <string name="sui_state_disabled">没启用喵</string>
     <string name="sui_state_enabled">运行中喵</string>
     <string name="sui_state_pending">已启用，等重启喵</string>
-    <string name="sui_state_external">已启用喵；由第三方 Zygisk 提供注入，FinaSU 没法验证运行状态</string>
+    <string name="sui_state_external">已启用喵；由第三方 Zygisk 提供注入，DeepseekSU 没法验证运行状态</string>
     <string name="sui_state_unavailable">用不了喵</string>
     <string name="sui_state_error">状态不对劲喵</string>
     <string name="sui_reason_zygisk_disabled">得先启用 Zygisk 喵</string>
@@ -26,7 +26,7 @@
     <string name="sui_reason_conflict">还装着另一个 Sui 喵：%1$s</string>
     <string name="sui_reason_payload_missing">Sui 载荷不完整，先修一修喵</string>
     <string name="sui_reason_module_disabled">Sui 模块在磁盘上是禁用状态喵</string>
-    <string name="sui_reason_enabled_externally">Sui 是在 FinaSU 外面启用的喵</string>
+    <string name="sui_reason_enabled_externally">Sui 是在 DeepseekSU 外面启用的喵</string>
     <string name="sui_reason_unknown">Sui 报了没想到的状态喵</string>
     <string name="sui_zygisk_external">第三方实现喵</string>
     <string name="sui_zygisk_disabled">没启用喵</string>
@@ -53,7 +53,7 @@
     <string name="sui_default_mode_summary">给没单独设置的应用用喵</string>
     <string name="sui_hidden_count">对 Sui 隐藏的应用</string>
     <string name="sui_notifications_off">后台提醒用不了喵</string>
-    <string name="sui_notifications_off_summary">给通知权限，FinaSU 在后台也能收到请求喵</string>
+    <string name="sui_notifications_off_summary">给通知权限，DeepseekSU 在后台也能收到请求喵</string>
     <string name="sui_permissions_filter">筛选</string>
     <string name="sui_mode_default">默认</string>
     <string name="sui_mode_root">允许 root</string>

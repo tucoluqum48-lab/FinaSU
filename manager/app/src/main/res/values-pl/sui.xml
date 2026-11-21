@@ -16,7 +16,7 @@
     <string name="sui_state_disabled">Nie włączono</string>
     <string name="sui_state_enabled">Działa</string>
     <string name="sui_state_pending">Włączono, oczekuje na ponowne uruchomienie</string>
-    <string name="sui_state_external">Włączono; wstrzykuje go zewnętrzny dostawca Zygisk, więc FinaSU nie może potwierdzić stanu</string>
+    <string name="sui_state_external">Włączono; wstrzykuje go zewnętrzny dostawca Zygisk, więc DeepseekSU nie może potwierdzić stanu</string>
     <string name="sui_state_unavailable">Niedostępne</string>
     <string name="sui_state_error">Wymaga uwagi</string>
     <string name="sui_reason_zygisk_disabled">Najpierw włącz Zygisk</string>
@@ -26,7 +26,7 @@
     <string name="sui_reason_conflict">Istnieje inna instalacja Sui: %1$s</string>
     <string name="sui_reason_payload_missing">Payload Sui jest niekompletny; użyj naprawy</string>
     <string name="sui_reason_module_disabled">Moduł Sui jest wyłączony na dysku</string>
-    <string name="sui_reason_enabled_externally">Sui włączono poza FinaSU</string>
+    <string name="sui_reason_enabled_externally">Sui włączono poza DeepseekSU</string>
     <string name="sui_reason_unknown">Sui zgłosił nieoczekiwany stan</string>
     <string name="sui_zygisk_external">dostawca zewnętrzny</string>
     <string name="sui_zygisk_disabled">wyłączony</string>
@@ -53,7 +53,7 @@
     <string name="sui_default_mode_summary">Dotyczy aplikacji bez własnej reguły</string>
     <string name="sui_hidden_count">Aplikacje ukryte przed Sui</string>
     <string name="sui_notifications_off">Powiadomienia w tle są wyłączone</string>
-    <string name="sui_notifications_off_summary">Przyznaj dostęp do powiadomień, aby żądanie dotarło, gdy FinaSU działa w tle</string>
+    <string name="sui_notifications_off_summary">Przyznaj dostęp do powiadomień, aby żądanie dotarło, gdy DeepseekSU działa w tle</string>
     <string name="sui_permissions_filter">Filtr</string>
     <string name="sui_mode_default">Domyślne</string>
     <string name="sui_mode_root">Zezwól na root</string>

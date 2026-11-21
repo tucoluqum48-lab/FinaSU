@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Language picker entries. Kept in sync with the locale directories. FolkPatch's curated
-         set is a superset: FinaSU intentionally omits the "文言" (zh-WY) variant for now. -->
+         set is a superset: DeepseekSU intentionally omits the "文言" (zh-WY) variant for now. -->
     <string-array name="languages">
         <item>@string/system_default</item>
         <item>English</item>

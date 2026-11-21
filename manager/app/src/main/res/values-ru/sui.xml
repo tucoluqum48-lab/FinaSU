@@ -16,7 +16,7 @@
     <string name="sui_state_disabled">Не включено</string>
     <string name="sui_state_enabled">Работает</string>
     <string name="sui_state_pending">Включено, ожидается перезагрузка</string>
-    <string name="sui_state_external">Включено; внедряется сторонним провайдером Zygisk, поэтому FinaSU не может проверить состояние</string>
+    <string name="sui_state_external">Включено; внедряется сторонним провайдером Zygisk, поэтому DeepseekSU не может проверить состояние</string>
     <string name="sui_state_unavailable">Недоступно</string>
     <string name="sui_state_error">Требует внимания</string>
     <string name="sui_reason_zygisk_disabled">Сначала включите Zygisk</string>
@@ -26,7 +26,7 @@
     <string name="sui_reason_conflict">Обнаружена другая установка Sui: %1$s</string>
     <string name="sui_reason_payload_missing">Пейлоад Sui неполный; используйте восстановление</string>
     <string name="sui_reason_module_disabled">Модуль Sui отключён на диске</string>
-    <string name="sui_reason_enabled_externally">Sui включён вне FinaSU</string>
+    <string name="sui_reason_enabled_externally">Sui включён вне DeepseekSU</string>
     <string name="sui_reason_unknown">Sui сообщил о неожиданном состоянии</string>
     <string name="sui_zygisk_external">сторонний провайдер</string>
     <string name="sui_zygisk_disabled">отключено</string>
@@ -53,7 +53,7 @@
     <string name="sui_default_mode_summary">Применяются к приложениям без собственного правила</string>
     <string name="sui_hidden_count">Приложения, скрытые от Sui</string>
     <string name="sui_notifications_off">Фоновые уведомления отключены</string>
-    <string name="sui_notifications_off_summary">Разрешите уведомления, чтобы запрос дошёл до вас, когда FinaSU в фоне</string>
+    <string name="sui_notifications_off_summary">Разрешите уведомления, чтобы запрос дошёл до вас, когда DeepseekSU в фоне</string>
     <string name="sui_permissions_filter">Фильтр</string>
     <string name="sui_mode_default">По умолчанию</string>
     <string name="sui_mode_root">Разрешить root</string>
