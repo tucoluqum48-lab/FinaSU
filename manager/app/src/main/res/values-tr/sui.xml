@@ -16,7 +16,7 @@
     <string name="sui_state_disabled">Etkin değil</string>
     <string name="sui_state_enabled">Çalışıyor</string>
     <string name="sui_state_pending">Etkin, yeniden başlatma bekleniyor</string>
-    <string name="sui_state_external">Etkin; üçüncü taraf bir Zygisk sağlayıcısı enjekte ediyor, bu yüzden FinaSU çalışma durumunu doğrulayamıyor</string>
+    <string name="sui_state_external">Etkin; üçüncü taraf bir Zygisk sağlayıcısı enjekte ediyor, bu yüzden DeepseekSU çalışma durumunu doğrulayamıyor</string>
     <string name="sui_state_unavailable">Kullanılamıyor</string>
     <string name="sui_state_error">İlgilenilmesi gerekiyor</string>
     <string name="sui_reason_zygisk_disabled">Önce Zygisk\'i etkinleştirin</string>
@@ -26,7 +26,7 @@
     <string name="sui_reason_conflict">Başka bir Sui kurulumu var: %1$s</string>
     <string name="sui_reason_payload_missing">Sui yükü eksik; onarımı kullanın</string>
     <string name="sui_reason_module_disabled">Sui modülü diskte devre dışı</string>
-    <string name="sui_reason_enabled_externally">Sui, FinaSU dışında etkinleştirildi</string>
+    <string name="sui_reason_enabled_externally">Sui, DeepseekSU dışında etkinleştirildi</string>
     <string name="sui_reason_unknown">Sui beklenmeyen bir durum bildirdi</string>
     <string name="sui_zygisk_external">üçüncü taraf sağlayıcı</string>
     <string name="sui_zygisk_disabled">devre dışı</string>
@@ -53,7 +53,7 @@
     <string name="sui_default_mode_summary">Kendi kuralı olmayan uygulamalar için kullanılır</string>
     <string name="sui_hidden_count">Sui\'den gizlenen uygulamalar</string>
     <string name="sui_notifications_off">Arka plan bildirimleri kapalı</string>
-    <string name="sui_notifications_off_summary">FinaSU arka plandayken isteğin size ulaşması için bildirim izni verin</string>
+    <string name="sui_notifications_off_summary">DeepseekSU arka plandayken isteğin size ulaşması için bildirim izni verin</string>
     <string name="sui_permissions_filter">Filtre</string>
     <string name="sui_mode_default">Varsayılan</string>
     <string name="sui_mode_root">root izni ver</string>
