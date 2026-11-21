@@ -16,7 +16,7 @@
     <string name="sui_state_disabled">未启用</string>
     <string name="sui_state_enabled">运行中</string>
     <string name="sui_state_pending">已启用，待重铸仙躯</string>
-    <string name="sui_state_external">已启用；由第三方 Zygisk 施展注入，FinaSU 无从验证其行</string>
+    <string name="sui_state_external">已启用；由第三方 Zygisk 施展注入，DeepseekSU 无从验证其行</string>
     <string name="sui_state_unavailable">不可用</string>
     <string name="sui_state_error">气场有异</string>
     <string name="sui_reason_zygisk_disabled">须先启用 Zygisk</string>
@@ -26,7 +26,7 @@
     <string name="sui_reason_conflict">已察另有 Sui 驻世：%1$s</string>
     <string name="sui_reason_payload_missing">Sui 仙蕴残缺，请先修复</string>
     <string name="sui_reason_module_disabled">Sui 模块于磁盘上处于封印状态</string>
-    <string name="sui_reason_enabled_externally">Sui 于 FinaSU 之外被启用</string>
+    <string name="sui_reason_enabled_externally">Sui 于 DeepseekSU 之外被启用</string>
     <string name="sui_reason_unknown">Sui 禀报了出乎意料之状态</string>
     <string name="sui_zygisk_external">第三方施法者</string>
     <string name="sui_zygisk_disabled">未启用</string>
@@ -53,7 +53,7 @@
     <string name="sui_default_mode_summary">用于未单立令式之应用</string>
     <string name="sui_hidden_count">对 Sui 隐遁的应用</string>
     <string name="sui_notifications_off">背景传讯不可用</string>
-    <string name="sui_notifications_off_summary">赐予通知之权，FinaSU 处背景时亦能收到请求</string>
+    <string name="sui_notifications_off_summary">赐予通知之权，DeepseekSU 处背景时亦能收到请求</string>
     <string name="sui_permissions_filter">筛选</string>
     <string name="sui_mode_default">默认</string>
     <string name="sui_mode_root">许 root</string>
