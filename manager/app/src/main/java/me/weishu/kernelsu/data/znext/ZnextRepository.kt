@@ -10,29 +10,29 @@ import me.weishu.kernelsu.ui.webui.BuiltinWebUI
 /**
  * 内置 Zygisk Next。
  *
- * 与 KPM 同一思路：全部资源随 APK 分发，缺失/版本变化时经 root shell 补回。
- *
- * 与官方模块的差异：
- *   · 不部署到 /data/adb/modules/zygisksu（模块列表里不会出现）
- *   · 二进制与资源放 /data/adb/znext
- *   · 用 /data/adb/post-fs-data.d 与 /data/adb/service.d 的脚本替代模块的两个阶段
- *   · sepolicy 规则在 post-fs-data 里用 ksud sepolicy patch 逐条应用
- *   · 界面放 app 私有目录，用 BuiltinWebUI 打开
+ * 结论性的部署形态（实测得出）：
+ *   · 守护进程 zygiskd 硬性要求「官方模块布局」——它从 /data/adb/modules/zygisksu
+ *     读 module.prop、校验自身文件、回写运行状态；把它挪到别处会报
+ *     "Module files corrupted" 或 "Last injection failed"。
+ *   · 因此这里按官方布局部署到 /data/adb/modules/zygisksu，
+ *     由 FinaSU 的模块机制负责 post-fs-data / service / sepolicy 三个阶段；
+ *   · 为了"模块列表里看不到"，模块列表在 ModuleRepositoryImpl 里过滤掉 zygisksu；
+ *   · 额外建 /data/adb/znext -> /data/adb/modules/zygisksu 的软链，
+ *     让内置 WebUI（页面里的命令走 /data/adb/znext 路径）也能工作；
+ *   · 界面本身仍释放到 app 私有目录，用 BuiltinWebUI 打开。
  */
 class ZnextRepository(private val context: Context) {
 
     companion object {
+        const val MODULE_DIR = "/data/adb/modules/zygisksu"
         const val TOOL_DIR = "/data/adb/znext"
-        const val POST_FS_SCRIPT = "/data/adb/post-fs-data.d/10-znext.sh"
-        const val SERVICE_SCRIPT = "/data/adb/service.d/10-znext.sh"
-        const val STATE_DIR = "/data/adb/zygisksu"
         const val WEBUI_DIR = "znextwebui"
         private const val ASSET_DIR = "znext"
     }
 
     private fun q(s: String) = "'" + s.replace("'", "'\\''") + "'"
 
-    /** 全量部署（版本不同或缺失时） */
+    /** 全量部署（缺失或版本变化时） */
     suspend fun ensureInstalled(): Boolean = withContext(Dispatchers.IO) {
         runCatching {
             val stage = File(context.cacheDir, "znext-assets")
@@ -41,54 +41,39 @@ class ZnextRepository(private val context: Context) {
             copyAssetDir(ASSET_DIR, stage)
 
             val bundledVer = readProp(File(stage, "module.prop"), "versionCode")
-            val installedVer = readProp(File("$TOOL_DIR/module.prop"), "versionCode")
-            val hasBinary = File("$TOOL_DIR/bin/zygiskd64").isFile
+            val installedVer = readProp(File("$MODULE_DIR/module.prop"), "versionCode")
+            val hasBinary = File("$MODULE_DIR/bin/zygiskd64").isFile
             val needDeploy = !hasBinary || bundledVer != installedVer
 
             if (needDeploy) {
                 Shell.cmd(
-                    "rm -rf " + q(TOOL_DIR) + " && mkdir -p " + q(TOOL_DIR) +
-                        " && cp -af " + q(stage.absolutePath) + "/. " + q(TOOL_DIR) + "/" +
-                        " && rm -rf " + q("$TOOL_DIR/webroot") + " " + q("$TOOL_DIR/boot") +
-                        " " + q("$TOOL_DIR/cleanup.sh") +
-                        " " + q("$TOOL_DIR/uninstall.sh") + " " + q("$TOOL_DIR/emulated-soft-reboot.sh") +
-                        " " + q("$TOOL_DIR/post-fs-data.sh") + " " + q("$TOOL_DIR/service.sh") +
-                        " " + q("$TOOL_DIR/machikado") + " " + q("$TOOL_DIR/mazoku") +
-                        " && chmod -R 755 " + q(TOOL_DIR) +
-                        " && ln -sf zygiskd64 " + q("$TOOL_DIR/bin/zygiskd") +
-                        " && mkdir -p " + q(STATE_DIR),
+                    "rm -rf " + q(MODULE_DIR) + " && mkdir -p " + q(MODULE_DIR) +
+                        " && cp -af " + q(stage.absolutePath) + "/. " + q(MODULE_DIR) + "/" +
+                        " && rm -rf " + q("$MODULE_DIR/webroot") + " " + q("$MODULE_DIR/boot") +
+                        " && chmod -R 755 " + q(MODULE_DIR) +
+                        " && ln -sf zygiskd64 " + q("$MODULE_DIR/bin/zygiskd"),
                 ).exec()
             }
 
-            // 开机脚本（每次都按模板重写，保证路径正确）
+            // /data/adb/znext 作为同一份内容的别名（内置界面里的命令按此路径执行）
             Shell.cmd(
-                "mkdir -p /data/adb/post-fs-data.d /data/adb/service.d" +
-                    " && cp -f " + q("${stage.absolutePath}/boot/post-fs-data.sh") + " " + q(POST_FS_SCRIPT) +
-                    " && cp -f " + q("${stage.absolutePath}/boot/service.sh") + " " + q(SERVICE_SCRIPT) +
-                    " && chmod 755 " + q(POST_FS_SCRIPT) + " " + q(SERVICE_SCRIPT),
+                "rm -rf " + q(TOOL_DIR) + " && ln -sfn " + q(MODULE_DIR) + " " + q(TOOL_DIR) +
+                    " && ls -ld " + q(TOOL_DIR),
             ).exec()
 
-            // 守护进程会读 / 回写 /data/adb/modules/zygisksu/module.prop，
-            // 因此必须保留一个最小"模块载体"（只有 module.prop），
-            // 界面上已由模块列表过滤掉，不显示为模块。
+            // 清掉早期版本留下的自建启动脚本（现在由模块机制接管）
             Shell.cmd(
-                "mkdir -p /data/adb/modules/zygisksu" +
-                    " && cp -f " + q("$TOOL_DIR/module.prop") + " /data/adb/modules/zygisksu/module.prop" +
-                    " && cp -f " + q("$TOOL_DIR/module.prop") + " " + q("$TOOL_DIR/module.prop.orig") +
-                    " && [ -f /data/adb/modules/zygisksu/disable ] && rm -f /data/adb/modules/zygisksu/disable",
+                "rm -f /data/adb/post-fs-data.d/10-znext.sh /data/adb/service.d/10-znext.sh",
             ).exec()
 
-            // 当前这次也立刻应用策略（开机由脚本负责）
-            applySepolicy(File(stage, "sepolicy.rule"))
-
-            // 与内置 FolkZygisk 互斥：关掉它
+            // 与内置 FolkZygisk 互斥
             Shell.cmd(
                 "mkdir -p /data/adb/ksu && echo '{\"enabled\":false}' > /data/adb/ksu/zygisk.json",
             ).exec()
             Shell.cmd("/data/adb/ksud zygisk disable").exec()
 
             stage.deleteRecursively()
-            File("$TOOL_DIR/bin/zygiskd64").isFile
+            File("$MODULE_DIR/bin/zygiskd64").isFile
         }.getOrDefault(false)
     }
 
@@ -110,16 +95,6 @@ class ZnextRepository(private val context: Context) {
             BuiltinWebUI.register(BuiltinWebUI.ZNEXT_ID, root, "Zygisk Next")
             File(webroot, "index.html").isFile
         }.getOrDefault(false)
-    }
-
-    private fun applySepolicy(ruleFile: File) {
-        if (!ruleFile.isFile) return
-        ruleFile.readLines()
-            .map { it.trim() }
-            .filter { it.isNotEmpty() && !it.startsWith("#") }
-            .forEach { line ->
-                Shell.cmd("/data/adb/ksud sepolicy patch " + q(line)).exec()
-            }
     }
 
     private fun readProp(file: File, key: String): String? {
