@@ -406,6 +406,32 @@ bool zn_process_is_target(void) {
   return strncmp(name, "app_process", 11) != 0;
 }
 
+/* A process that already hosts an app cannot wait for setcontext again, so the
+   specialize callback is synthesized from its command line. */
+static bool hosting_app(char *package, size_t package_size) {
+  char cmdline[256] = { 0 };
+
+  FILE *file = fopen("/proc/self/cmdline", "re");
+  if (file == NULL) return false;
+
+  size_t len = fread(cmdline, 1, sizeof(cmdline) - 1, file);
+  fclose(file);
+  if (len == 0) return false;
+  cmdline[len] = '\0';
+
+  if (cmdline[0] == '/' || strcmp(cmdline, "usap64") == 0 ||
+      strcmp(cmdline, "hyos_spawner") == 0)
+    return false;
+
+  size_t name_len = strcspn(cmdline, ":");
+  if (name_len == 0 || name_len >= package_size) return false;
+
+  memcpy(package, cmdline, name_len);
+  package[name_len] = '\0';
+
+  return true;
+}
+
 void zn_load_modules(void) {
   if (g_spawner_pid == 0) g_spawner_pid = (pid_t)syscall(__NR_getpid);
 
@@ -469,4 +495,8 @@ void zn_load_modules(void) {
          ref->companion ? 1 : 0);
     module->onModuleLoaded(&slot->handle, &g_api);
   }
+
+  char package[256];
+  if (!g_hyos_delivered && hosting_app(package, sizeof(package)))
+    deliver_app_specialized(package, "");
 }
