@@ -404,26 +404,25 @@ int rezygiskd_request_zn_companion(const char *path) {
   int fd = rezygiskd_connect(1);
   if (fd == -1) return -1;
 
-  /* The daemon may hand the socket to the companion without answering here;
-     a blocking read would then stall the caller, so keep it short. */
-  struct timeval timeout = { .tv_sec = 2, .tv_usec = 0 };
-  setsockopt(fd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
-
-  safe_write(write_uint8_t(fd, (uint8_t)RequestZnCompanionSocket), "RequestZnCompanionSocket action", return -1);
-  safe_write(write_string(fd, path), "zn library path", return -1);
-
-  uint8_t res = 0;
-  if (read_uint8_t(fd, &res) != sizeof(res)) {
-    LOGE("ZN companion request timed out for %s", path);
+  if (write_uint8_t(fd, (uint8_t)RequestZnCompanionSocket) != sizeof(uint8_t) ||
+      write_string(fd, path) == -1) {
+    LOGE("Failed to request the ZN companion for %s", path);
 
     close(fd);
     return -1;
   }
 
-  if (res == 1) return fd;
+  /* The daemon hands this connection to the companion instead of answering on
+     it; only a refusal arrives as a byte, so peek without consuming. */
+  uint8_t refused = 0;
+  if (recv(fd, &refused, sizeof(refused), MSG_PEEK | MSG_DONTWAIT) == sizeof(refused)) {
+    LOGE("ZN companion request refused for %s", path);
 
-  close(fd);
-  return -1;
+    close(fd);
+    return -1;
+  }
+
+  return fd;
 }
 
 #undef safe_read
