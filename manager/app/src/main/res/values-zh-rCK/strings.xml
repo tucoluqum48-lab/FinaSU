@@ -5,7 +5,7 @@
     <string name="feature_status_forced_summary">饭庄开张时就定死了，这儿改不了</string>
     <string name="install_anykernel">刷入 AnyKernel3 ZIP</string>
     <string name="install_anykernel_summary">拿当前灶台或未使用的 A/B 灶台跑可信的秘酱料安装器，得有大厨权限。</string>
-    <string name="install_anykernel_warning">这 ZIP 会以大厨身份下锅，可能动好几个分区。真写哪块、哪个灶台，全看安装脚本，FinaSU 不插手灶台，也不更新 ksud。装成了也不保准能开机，翻车了也可能已经写了半截。现有的启动镜像备份未必罩得住这些改动。先确认灶具合不合得来、备好回滚镜像，再动手。</string>
+    <string name="install_anykernel_warning">这 ZIP 会以大厨身份下锅，可能动好几个分区。真写哪块、哪个灶台，全看安装脚本，DeepseekSU 不插手灶台，也不更新 ksud。装成了也不保准能开机，翻车了也可能已经写了半截。现有的启动镜像备份未必罩得住这些改动。先确认灶具合不合得来、备好回滚镜像，再动手。</string>
     <string name="install_anykernel_root_required">刷 AnyKernel3 得有大厨权限。</string>
     <string name="install_anykernel_read_failed">这 AnyKernel3 ZIP 读不出来。</string>
     <string name="home">后厨操作台</string>
@@ -13,7 +13,7 @@
     <string name="home_click_to_install">点一下上灶</string>
     <string name="home_working">灶上忙着</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">DeepseekSU</string>
     <string name="home_tile_system">饭庄信息</string>
     <string name="home_tile_device">灶具</string>
     <string name="home_tile_storage">存货</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">瞧瞧 KernelSU</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">瞧瞧 KernelSU 咋上灶、招牌菜咋研发。</string>
-    <string name="home_learn_finasu">瞧瞧 FinaSU</string>
+    <string name="home_learn_finasu">瞧瞧 DeepseekSU</string>
     <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">尝尝 FinaSU 的招牌菜和新菜式</string>
+    <string name="home_click_to_learn_finasu">尝尝 DeepseekSU 的招牌菜和新菜式</string>
     <string name="home_support_title">给大厨捧个场</string>
     <string name="home_support_content">KernelSU 一直免费开源，打赏一下就是最大的支持。</string>
     <string name="home_gki_warning">打 v3.0.0 起，GKI 干活模式只在试菜时用，不推荐日常下厨，镜像文件也不再供了。</string>
@@ -279,7 +279,7 @@
     <string name="settings_sucompat_summary">准许借 /system/bin/su 攥大厨权限</string>
     <string name="settings_kernel_umount">收招牌菜（秘酱料级）</string>
     <string name="settings_kernel_umount_summary">在秘酱料里给要的应用收起招牌菜</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">DeepseekSU Hide</string>
     <string name="settings_kernel_umount_unknown">弄不成拿准功能是否能用嘞</string>
     <string name="settings_kernel_umount_values">眼下：%1$s · 再开火后：%2$s嘞</string>
     <string name="settings_kernel_umount_on">开启嘞</string>
@@ -483,7 +483,7 @@
     <string name="settings_section_layout">摆盘</string>
     <string name="settings_support_links">首页底部小灶</string>
     <string name="settings_support_links_summary">挑挑首页底下摆哪道菜。</string>
-    <string name="settings_support_links_finasu">瞧瞧 FinaSU</string>
+    <string name="settings_support_links_finasu">瞧瞧 DeepseekSU</string>
     <string name="settings_support_links_legacy">给大厨捧个场与 KernelSU</string>
     <string name="settings_support_links_hidden">收起来</string>
     <string name="settings_support_links_custom">自选配料</string>
@@ -680,11 +680,11 @@
     <string name="download_install">上灶</string>
     <string name="settings_finasu_hide_summary">多多少少藏着 Bootloader 解锁状态</string>
     <string name="settings_finasu_hide_reboot_hint">重启后还是真模样</string>
-    <string name="settings_finasu_hide_failed">FinaSU Hide 没改成功</string>
+    <string name="settings_finasu_hide_failed">DeepseekSU Hide 没改成功</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">让 adbd 看店的拿着大厨权限干活</string>
     <string name="feature_external_changes_title">共享配法已被外部修改嘞</string>
-    <string name="feature_external_changes_summary">外部模块或管事的在 FinaSU 套上已收好配法后修改了这些运行值。FinaSU 不会顺手覆盖嘞。</string>
+    <string name="feature_external_changes_summary">外部模块或管事的在 DeepseekSU 套上已收好配法后修改了这些运行值。DeepseekSU 不会顺手覆盖嘞。</string>
     <string name="feature_external_value_on">开启嘞</string>
     <string name="feature_external_value_off">关闭嘞</string>
     <string name="menu_sort">排队</string>
@@ -880,7 +880,7 @@
     <string name="backup_section_content">存底些啥</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">本地储藏柜</string>
-    <string name="backup_local_summary">存入 Download/FinaSU</string>
+    <string name="backup_local_summary">存入 Download/DeepseekSU</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">打开储藏柜</string>
     <string name="backup_modules">酱料模块</string>
@@ -1097,11 +1097,11 @@
     <string name="module_preinit_error">预初始化同步砸了，先按老规矩来</string>
     <string name="module_preinit_bootloop">连开几回都没成，预初始化先歇着</string>
     <string name="module_preinit_unsupported">这口锅或这个开火法不支持预初始化</string>
-    <string name="guide_welcome_title">欢迎光临 FinaSU</string>
+    <string name="guide_welcome_title">欢迎光临 DeepseekSU</string>
     <string name="guide_welcome_desc">内核级 Root 管理这桌菜，Zygisk 做法、Shizuku API 配菜、VFS 路径改道和模块上桌引擎全都备齐了。</string>
     <string name="guide_repo_title">GitHub 开源厨房</string>
     <string name="guide_repo_desc">源码、问题反馈和版本更新都在仓库这口锅里。</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/LyraVoid/DeepseekSU</string>
     <string name="guide_repo_action">打开仓库</string>
     <string name="guide_features_title">内置招牌</string>
     <string name="guide_features_desc">四个引擎都做进管理器里了，不用再额外加菜装模块。</string>
