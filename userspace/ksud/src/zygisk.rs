@@ -278,7 +278,7 @@ allow domain system_lib_file dir search
 allow domain system_lib_file file { read open getattr map execute }
 allow domain zygisk_file sock_file { read write }
 allow domain zygisk_file unix_stream_socket { read write connectto getattr }
-allow domain zygote unix_stream_socket connectto
+allow domain zygote unix_stream_socket { read write connectto }
 ";
 
 /// True when a module declares the HyperOS spawner as a ZN target.
