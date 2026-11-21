@@ -5,7 +5,7 @@
     <string name="feature_status_forced_summary">已由启动配置强制指定，无法在此修改</string>
     <string name="install_anykernel">锻造 AnyKernel3 ZIP</string>
     <string name="install_anykernel_summary">以当前或未使用的 A/B 槽运行可信基岩核心合成器，需要 OP 权限。</string>
-    <string name="install_anykernel_warning">这个 ZIP 会以 OP 权限执行，可能改动多个分区。实际写入哪些分区和槽位由合成脚本决定，FinaSU 不会覆盖槽位，也不更新 ksud。合成成功不保证能启动，失败也可能已写入一部分。现有的启动镜像末影箱备份未必兜得住这些改动。合成与锻造有风险，请确保已备份存档到末影箱！</string>
+    <string name="install_anykernel_warning">这个 ZIP 会以 OP 权限执行，可能改动多个分区。实际写入哪些分区和槽位由合成脚本决定，DeepseekSU 不会覆盖槽位，也不更新 ksud。合成成功不保证能启动，失败也可能已写入一部分。现有的启动镜像末影箱备份未必兜得住这些改动。合成与锻造有风险，请确保已备份存档到末影箱！</string>
     <string name="install_anykernel_root_required">锻造 AnyKernel3 需要 OP 权限。</string>
     <string name="install_anykernel_read_failed">无法读取 AnyKernel3 ZIP。</string>
     <string name="home">主世界</string>
@@ -13,7 +13,7 @@
     <string name="home_click_to_install">点击合成</string>
     <string name="home_working">联机中</string>
     <string name="home_tile_status">KernelSU</string>
-    <string name="home_tile_manager">FinaSU</string>
+    <string name="home_tile_manager">DeepseekSU</string>
     <string name="home_tile_system">红石系统信息</string>
     <string name="home_tile_device">设备</string>
     <string name="home_tile_storage">存储</string>
@@ -148,9 +148,9 @@
     <string name="home_learn_kernelsu">了解 KernelSU</string>
     <string name="home_learn_kernelsu_url">https://kernelsu.org/zh_CN/guide/what-is-kernelsu.html</string>
     <string name="home_click_to_learn_kernelsu">了解如何合成 KernelSU 以及如何开发模组</string>
-    <string name="home_learn_finasu">了解 FinaSU</string>
+    <string name="home_learn_finasu">了解 DeepseekSU</string>
     <string name="home_learn_finasu_url">https://fina.mysqil.com/</string>
-    <string name="home_click_to_learn_finasu">了解如何合成 FinaSU 以及如何开发模组</string>
+    <string name="home_click_to_learn_finasu">了解如何合成 DeepseekSU 以及如何开发模组</string>
     <string name="home_support_title">给绿宝石</string>
     <string name="home_support_content">KernelSU 永远免费开源，往合成台投喂绿宝石就是最好的支持</string>
     <string name="home_gki_warning">自 v3.0.0 起 GKI 工作模式将仅用于测试环境，我们不建议用于日常使用，也不再提供镜像文件</string>
@@ -279,7 +279,7 @@
     <string name="settings_sucompat_summary">允许通过 /system/bin/su 获取 OP 权限</string>
     <string name="settings_kernel_umount">卸载模组（基岩核心级）</string>
     <string name="settings_kernel_umount_summary">在基岩核心给需要的应用卸载模组</string>
-    <string name="settings_finasu_hide">FinaSU Hide</string>
+    <string name="settings_finasu_hide">DeepseekSU Hide</string>
     <string name="settings_kernel_umount_unknown">无法确认功能是否可用（主世界）</string>
     <string name="settings_kernel_umount_values">目前：%1$s · 重新进入世界后：%2$s</string>
     <string name="settings_kernel_umount_on">开启（主世界）</string>
@@ -483,7 +483,7 @@
     <string name="settings_section_layout">布局</string>
     <string name="settings_support_links">首页底部合成台</string>
     <string name="settings_support_links_summary">选择首页底部展示的物品。</string>
-    <string name="settings_support_links_finasu">了解 FinaSU</string>
+    <string name="settings_support_links_finasu">了解 DeepseekSU</string>
     <string name="settings_support_links_legacy">给绿宝石与 KernelSU</string>
     <string name="settings_support_links_hidden">隐藏</string>
     <string name="settings_support_links_custom">自定义</string>
@@ -680,11 +680,11 @@
     <string name="download_install">合成</string>
     <string name="settings_finasu_hide_summary">在一定程度上隐藏 Bootloader 解锁状态</string>
     <string name="settings_finasu_hide_reboot_hint">重启后恢复真实值</string>
-    <string name="settings_finasu_hide_failed">修改 FinaSU Hide 失败</string>
+    <string name="settings_finasu_hide_failed">修改 DeepseekSU Hide 失败</string>
     <string name="settings_adb_root" translatable="false">ADB Root</string>
     <string name="settings_adb_root_summary">以 OP 权限运行 adbd 守护进程</string>
     <string name="feature_external_changes_title">共享世界设置已被外部修改</string>
-    <string name="feature_external_changes_summary">外部模块或管理员在 FinaSU 应用已存档世界设置后修改了这些运行值。FinaSU 不会自动覆盖。</string>
+    <string name="feature_external_changes_summary">外部模块或管理员在 DeepseekSU 应用已存档世界设置后修改了这些运行值。DeepseekSU 不会自动覆盖。</string>
     <string name="feature_external_value_on">开启（主世界）</string>
     <string name="feature_external_value_off">关闭（主世界）</string>
     <string name="menu_sort">排序</string>
@@ -880,7 +880,7 @@
     <string name="backup_section_content">要备份啥</string>
     <string name="backup_section_webdav">WebDAV</string>
     <string name="backup_local_enabled">本地箱子</string>
-    <string name="backup_local_summary">存到 Download/FinaSU</string>
+    <string name="backup_local_summary">存到 Download/DeepseekSU</string>
     <string name="backup_webdav_enabled">WebDAV</string>
     <string name="backup_open_folder">打开备份箱子</string>
     <string name="backup_modules">模组</string>
@@ -1097,11 +1097,11 @@
     <string name="module_preinit_error">预初始化同步失败，保留上次配置</string>
     <string name="module_preinit_bootloop">多次启动未完成，预初始化已暂停</string>
     <string name="module_preinit_unsupported">当前内核或加载模式不支持预初始化</string>
-    <string name="guide_welcome_title">欢迎来到 FinaSU</string>
+    <string name="guide_welcome_title">欢迎来到 DeepseekSU</string>
     <string name="guide_welcome_desc">内核级 Root 管理，内置 Zygisk 实现、Shizuku API 后端、VFS 路径重定向和模块挂载引擎，像一套完整的红石装置。</string>
     <string name="guide_repo_title">GitHub 开源工作台</string>
     <string name="guide_repo_desc">源代码、问题反馈和版本更新都在仓库里。</string>
-    <string name="guide_repo_url">github.com/LyraVoid/FinaSU</string>
+    <string name="guide_repo_url">github.com/LyraVoid/DeepseekSU</string>
     <string name="guide_repo_action">打开仓库</string>
     <string name="guide_features_title">内置能力</string>
     <string name="guide_features_desc">四个引擎已装进管理器，无需额外合成模组。</string>
