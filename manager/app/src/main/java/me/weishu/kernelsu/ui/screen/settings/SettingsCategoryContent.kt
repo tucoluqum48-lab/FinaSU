@@ -717,7 +717,7 @@ fun FunctionCategoryContent(uiState: SettingsUiState, actions: SettingsScreenAct
                                                     .authority("webui")
                                                     .appendQueryParameter(
                                                         "id",
-                                                        me.weishu.kernelsu.ui.webui.BuiltinWebUI.MODULE_ID,
+                                                        me.weishu.kernelsu.ui.webui.BuiltinWebUI.KPM_ID,
                                                     )
                                                     .build(),
                                             ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
